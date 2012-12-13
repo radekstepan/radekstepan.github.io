@@ -34,11 +34,10 @@ Define the config for your site in `config.json`:
         "provider": "https://browserid.org/verify",
         "salt":     "Q?RAf!CAkus?ejuCruKu",
         "users": [
-            "radek.stepan@gmail.com",
-            "jelena121@gmail.com",
-            "g.micklem@gen.cam.ac.uk"
+            "radek.stepan@gmail.com"
         ]
-    }
+    },
+    "root": "/"
 }
 ```
 
@@ -51,6 +50,8 @@ Define the config for your site in `config.json`:
     <dd>A salt used to hash credentials so that an API key can be generated and used by the Chaplin admin. Do not leave it to default unless you know what you are doing!</dd>
     <dt>browserid.users</dt>
     <dd>An array of email addresses of people that should have access to the backend admin. If they have not created an account with the BrowserID provider, they will be offered a chance to do so on their first login to the site.</dd>
+    <dt>root</dt>
+    <dd>Where is the root of this CMS located? If your app is mapped to a subdirectory, change this property.</dd>
 </dl>
 
 Finally start the service, take note that if you wish to start it on a specific port, pass it in as the `process.env.PORT ` variable:

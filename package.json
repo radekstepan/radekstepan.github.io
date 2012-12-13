@@ -3,7 +3,7 @@
     "author": "Radek <rs676@cam.ac.uk>",
     "version": "0.1.0",
     "dependencies": {
-        "blad": "2.0.5",
+        "blad": "latest",
         "marked": "0.2.5"
     },
     "scripts": {

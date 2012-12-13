@@ -6,5 +6,6 @@
         "users": [
             "radek.stepan@gmail.com"
         ]
-    }
+    },
+    "root": "/"
 }
