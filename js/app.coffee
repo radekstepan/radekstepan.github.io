@@ -1,18 +1,18 @@
-# Handle window resize (when looking at a detail).
-$event = $.event
-resizeTimeout = undefined
-$special = $event.special.debouncedresize =
-    setup: -> $(this).on 'resize', $special.handler
-    teardown: -> $(this).off 'resize', $special.handler
-    handler: (event, execAsap) ->
-        context = this
-        args = arguments
-        dispatch = ->
-            event.type = 'debouncedresize'
-            $event.dispatch.apply context, args
-        clearTimeout resizeTimeout if resizeTimeout
-        (if execAsap then dispatch() else resizeTimeout = setTimeout(dispatch, $special.threshold))
-    threshold: 50
+# # Handle window resize (when looking at a detail).
+# $event = $.event
+# resizeTimeout = undefined
+# $special = $event.special.debouncedresize =
+#     setup: -> $(this).on 'resize', $special.handler
+#     teardown: -> $(this).off 'resize', $special.handler
+#     handler: (event, execAsap) ->
+#         context = this
+#         args = arguments
+#         dispatch = ->
+#             event.type = 'debouncedresize'
+#             $event.dispatch.apply context, args
+#         clearTimeout resizeTimeout if resizeTimeout
+#         (if execAsap then dispatch() else resizeTimeout = setTimeout(dispatch, $special.threshold))
+#     threshold: 50
 
 getItemLayoutProp = (item) ->
     scrollT = $(window).scrollTop()
@@ -49,24 +49,27 @@ class App
         @winsize = getWindowSize()
 
         # Apply fittext plugin.
-        @items.find('div.rb-week > div span').fitText(0.3).end().find('span.rb-city').fitText(0.5)
+        @items.find('div.rb-content > div span').fitText(0.3).end().find('span.rb-city').fitText(0.5)
         
         # Init events.
         @items.each @initEvent
 
-        # On window resize.
-        $(window).on 'debouncedresize', =>
-            @winsize = getWindowSize()
-            if @current isnt -1
-                @items.eq(@current).children('div.rb-overlay')
-                .css('clip', "rect(0px #{@winsize.width}px #{@winsize.height}px 0px)")
+        # # On window resize.
+        # $(window).on 'debouncedresize', =>
+        #     @winsize = getWindowSize()
+        #     if @current isnt -1
+        #         @items.eq(@current).children('div.rb-overlay')
+        #         .css('clip', "rect(0px #{@winsize.width}px #{@winsize.height}px 0px)")
     
     initEvent: (i, el) =>
         item = $(el)
         overlay = item.children('div.rb-overlay')
         
         # On open.
-        item.on 'click', =>
+        item.on 'click', (e) =>
+            # Are we clicking inside the content?
+            return if $(e.target).closest('.rb-content').length
+
             # Do nothing if already expanded.
             return false if item.data('isExpanded')
             # Set as expanded.
