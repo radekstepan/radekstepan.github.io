@@ -65,7 +65,27 @@ class App
         #     if @current isnt -1
         #         @items.eq(@current).children('div.rb-overlay')
         #         .css('clip', "rect(0px #{@winsize.width}px #{@winsize.height}px 0px)")
+
+        # Init category handling.
+        $('nav#categories a').click @switchCategory
     
+    switchCategory: (e) ->
+        # Reset all current categories.
+        $('nav#categories a').removeClass('current')
+
+        # Add class to our category.
+        (t = $(e.target)).addClass('current')
+
+        # Get the new category.
+        cat = t.attr('data-category')
+
+        $('ul#rb-grid li').each (i, el) ->
+            el = $(el)
+            if cat in el.attr('data-category').split(',')
+                el.removeClass('disabled')
+            else
+                el.addClass('disabled')
+
     initEvent: (i, el) =>
         item = $(el)
         
@@ -85,6 +105,9 @@ class App
         
         # Do nothing unless previous close animation finished.
         return false unless @finished
+
+        # Do nothing if we are disabled.
+        return false if item.hasClass 'disabled'
 
         # Set as expanded.
         item.data 'isExpanded', true

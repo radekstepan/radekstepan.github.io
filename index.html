@@ -34,20 +34,20 @@
             
             <header class="clearfix">
                 <h1>Work of Radek Stepan <span>A full stack developer</span></h1>  
-                <nav class="page-demos">
-                    <a class="current-demo">All</a>
-                    <a>JavaScript/Node.js</a>
-                    <a>HTML/CSS</a>
-                    <a>Python</a>
-                    <a>PHP</a>
-                    <a>Photoshop</a>
+                <nav id="categories">
+                    <a data-category="1" class="current">All</a>
+                    <a data-category="2">JavaScript/Node.js</a>
+                    <a data-category="3">HTML/CSS</a>
+                    <a data-category="4">Python</a>
+                    <a data-category="5">PHP</a>
+                    <a data-category="6">Photoshop</a>
                 </nav>
             </header>
             
             <div class="main">
 
                 <ul id="rb-grid" class="rb-grid clearfix">
-                    <li class="five">
+                    <li class="five" data-category="1">
                         <span class="title">ukraine</span>
                         <span class="subtitle">Open Source Node.js PaaS with automatic Proxy and CLI client</span>
                         <div class="rb-overlay">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="one">
+                    <li class="one" data-category="1">
                         <span class="title">kontu</span>
                         <span class="subtitle">A web service for a ledger based budgetting app using MongoDB as a data store</span>
                         <div class="rb-overlay">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="three">
+                    <li class="three" data-category="2">
                         <span class="title">intermine-steps</span>
                         <span class="subtitle">InterMine 2.0 Prototype preserving history of Steps</span>
                         <div class="rb-overlay">
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="seven">
+                    <li class="seven" data-category="1,2">
                         <span class="title">FlaskBudget</span>
                         <span class="subtitle">A Budget application for couples in Flask</span>
                         <div class="rb-overlay">

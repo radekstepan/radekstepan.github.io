@@ -123,11 +123,11 @@ a {
   float: left;
   display: block;
 }
-.page-demos {
+#categories {
   float: right;
   padding-top: 0.625em;
 }
-.page-demos a {
+#categories a {
   display: inline-block;
   margin: 0.625em;
   color: #666;
@@ -136,12 +136,12 @@ a {
   line-height: 2;
   border-bottom: 4px solid transparent;
 }
-.page-demos a:hover {
+#categories a:hover {
   color: #000;
   border-color: #000;
 }
-.page-demos a.current-demo,
-.page-demos a.current-demo:hover {
+#categories a.current,
+#categories a.current:hover {
   color: #aaa;
   border-color: #aaa;
 }
@@ -171,6 +171,11 @@ a {
   padding: 1em;
   cursor: pointer;
   position: relative;
+  opacity: 1;
+}
+.rb-grid li.disabled {
+  cursor: default;
+  opacity: 0.1;
 }
 .rb-grid li.span-2 {
   width: 38%;

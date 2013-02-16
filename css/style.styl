@@ -130,7 +130,7 @@ a
             float: left
             display: block
 
-.page-demos
+#categories
     float: right
     padding-top: 0.625em
 
@@ -147,7 +147,7 @@ a
             color: #000
             border-color: #000
 
-        &.current-demo, &.current-demo:hover
+        &.current, &.current:hover
             color: #aaa
             border-color: #aaa
 
@@ -177,6 +177,11 @@ a
         padding: 1em
         cursor: pointer
         position: relative
+        opacity: 1
+
+        &.disabled
+            cursor: default
+            opacity: 0.1
 
         &.span-2
             width: 38%
