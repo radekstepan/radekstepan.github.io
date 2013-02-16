@@ -105,7 +105,7 @@ a
                 font-size: 65%
                 font-weight: 300
 
-.codrops-top
+.page-top
     line-height: 3.5
     font-size: 0.688em
     background: url('../img/irongrip.png')
@@ -130,7 +130,7 @@ a
             float: left
             display: block
 
-.codrops-demos
+.page-demos
     float: right
     padding-top: 0.625em
 
@@ -143,16 +143,13 @@ a
         line-height: 2
         border-bottom: 4px solid transparent
 
-
         &:hover
             color: #000
             border-color: #000
 
-
         &.current-demo, &.current-demo:hover
             color: #aaa
             border-color: #aaa
-
 
 .support-note
     clear: both
@@ -292,9 +289,8 @@ a
         padding: 4em
         background: rgba(0,0,0,0.8)
 
-    .body
+    .scroll-pane
         height: 10em
-        overflow-y: auto
 
     h3
         font-size: 4em
@@ -327,18 +323,52 @@ a
         font-size: 2.5em
         font-weight: normal
 
-@media screen and (max-width: 63.125em)
-    .rb-grid
-        li, li.rb-span-2, li.rb-span-4
-            width: 100%
-            height: 10em
-            text-align: left
+// jScrollPane.
+.jspContainer
+    overflow: hidden
+    position: relative
 
-        li[class^="icon-"]:before, li[class*=" icon-"]:before
-            font-size: 6em
-            left: auto
-            right: 0
-            line-height: 2.5
+    .jspPane
+        position: absolute
+        width: 100% !important
+        left: 0 !important
 
-        li > div
-            text-align: center
+        > *
+            padding-right: 23px
+
+    &:hover .jspVerticalBar
+        opacity: 1
+
+    .jspVerticalBar
+        position: absolute
+        top: 0px
+        right: 1%
+        width: 9px
+        height: 100%
+        opacity: 0
+        -webkit-transition: opacity 0.2s linear
+
+        .jspCap
+            height: 5px
+            display: block
+
+        .jspTrack
+            background: rgba(242,242,242,0.5)
+            box-shadow: inset 0 0 1px rgba(0,0,0,0.1), inset 1px 0 4px rgba(0,0,0,0.05)
+            border-radius: 10px
+            position: relative
+
+            .jspDrag
+                background: #fff
+                position: relative
+                box-shadow: inset -1px 0 8px rgba(0,0,0,0.05)
+                top: 0
+                left: 0
+                border-radius: 5px
+                border: 1px solid #f0f0f0
+                cursor: pointer
+
+    .jspCorner
+        background: #fff
+        float: left
+        height: 100%

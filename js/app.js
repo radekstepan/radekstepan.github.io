@@ -33,6 +33,10 @@
   App = (function() {
 
     function App() {
+      this.onClose = __bind(this.onClose, this);
+
+      this.onOpen = __bind(this.onOpen, this);
+
       this.initEvent = __bind(this.initEvent, this);
 
     }
@@ -47,87 +51,112 @@
 
     App.prototype.current = -1;
 
+    App.prototype.finished = true;
+
     App.prototype.initialize = function() {
       this.items = $('#rb-grid > li');
       this.transEndEventName = this.transitions[Modernizr.prefixed('transition')];
       this.winsize = getWindowSize();
       this.items.find('div.rb-content > div span').fitText(0.3).end().find('span.rb-city').fitText(0.5);
+      $('.scroll-pane').jScrollPane();
       return this.items.each(this.initEvent);
     };
 
     App.prototype.initEvent = function(i, el) {
-      var item, overlay,
+      var item,
         _this = this;
       item = $(el);
-      overlay = item.children('div.rb-overlay');
       item.on('click', function(e) {
-        var clipPropFirst, clipPropLast, layoutProp;
-        if ($(e.target).closest('.rb-content').length) {
-          return;
+        return _this.onOpen(item, e);
+      });
+      item.find('span.rb-close').on('click', function() {
+        return _this.onClose(item);
+      });
+      return $(document).keyup(function(e) {
+        if (e.keyCode === 27) {
+          return _this.onClose(item);
         }
-        if (item.data('isExpanded')) {
-          return false;
-        }
-        item.data('isExpanded', true);
-        _this.current = item.index();
-        layoutProp = getItemLayoutProp(item);
-        clipPropFirst = "rect(" + layoutProp.top + "px " + (layoutProp.left + layoutProp.width) + "px " + (layoutProp.top + layoutProp.height) + "px " + layoutProp.left + "px)";
-        clipPropLast = "rect(0px " + _this.winsize.width + "px " + _this.winsize.height + "px 0px)";
-        overlay.css({
-          transformOrigin: "" + layoutProp.left + "px " + layoutProp.top + "px",
-          clip: (Modernizr.csstransitions ? clipPropFirst : clipPropLast),
-          transform: (Modernizr.csstransitions ? 'rotate(45deg)' : 'none'),
-          opacity: 1,
-          zIndex: 9999,
-          pointerEvents: 'auto'
+      });
+    };
+
+    App.prototype.onOpen = function(item, e) {
+      var clipPropFirst, clipPropLast, layoutProp, overlay,
+        _this = this;
+      if ($(e.target).closest('.rb-content').length) {
+        return;
+      }
+      if (item.data('isExpanded')) {
+        return false;
+      }
+      if (!this.finished) {
+        return false;
+      }
+      item.data('isExpanded', true);
+      this.current = item.index();
+      overlay = item.children('div.rb-overlay');
+      layoutProp = getItemLayoutProp(item);
+      clipPropFirst = "rect(" + layoutProp.top + "px " + (layoutProp.left + layoutProp.width) + "px " + (layoutProp.top + layoutProp.height) + "px " + layoutProp.left + "px)";
+      clipPropLast = "rect(0px " + this.winsize.width + "px " + this.winsize.height + "px 0px)";
+      overlay.css({
+        transformOrigin: "" + layoutProp.left + "px " + layoutProp.top + "px",
+        clip: (Modernizr.csstransitions ? clipPropFirst : clipPropLast),
+        transform: (Modernizr.csstransitions ? 'rotate(45deg)' : 'none'),
+        opacity: 1,
+        zIndex: 9999,
+        pointerEvents: 'auto'
+      });
+      if (Modernizr.csstransitions) {
+        return overlay.on(this.transEndEventName, function() {
+          overlay.off(_this.transEndEventName);
+          return setTimeout((function() {
+            return overlay.css({
+              clip: clipPropLast,
+              transform: 'rotate(0deg)'
+            }).on(_this.transEndEventName, function() {
+              overlay.off(_this.transEndEventName);
+              return $('body').css('overflow-y', 'hidden');
+            });
+          }), 25);
         });
-        if (Modernizr.csstransitions) {
-          return overlay.on(_this.transEndEventName, function() {
-            overlay.off(this.transEndEventName);
-            return setTimeout((function() {
-              return overlay.css({
+      } else {
+        return $('body').css('overflow-y', 'hidden');
+      }
+    };
+
+    App.prototype.onClose = function(item) {
+      var clipPropFirst, clipPropLast, layoutProp, overlay,
+        _this = this;
+      $('body').css('overflow-y', 'auto');
+      layoutProp = getItemLayoutProp(item);
+      clipPropFirst = "rect(" + layoutProp.top + "px " + (layoutProp.left + layoutProp.width) + "px " + (layoutProp.top + layoutProp.height) + "px " + layoutProp.left + "px)";
+      clipPropLast = 'auto';
+      this.current = -1;
+      overlay = item.children('div.rb-overlay');
+      overlay.css({
+        clip: (Modernizr.csstransitions ? clipPropFirst : clipPropLast),
+        opacity: (Modernizr.csstransitions ? 1 : 0),
+        pointerEvents: 'none'
+      });
+      this.finished = false;
+      if (Modernizr.csstransitions) {
+        return overlay.on(this.transEndEventName, function() {
+          overlay.off(_this.transEndEventName);
+          return setTimeout((function() {
+            return overlay.css('opacity', 0).on(_this.transEndEventName, function() {
+              overlay.off(_this.transEndEventName).css({
                 clip: clipPropLast,
-                transform: 'rotate(0deg)'
-              }).on(this.transEndEventName, function() {
-                overlay.off(this.transEndEventName);
-                return $('body').css('overflow-y', 'hidden');
+                zIndex: -1
               });
-            }), 25);
-          });
-        } else {
-          return $('body').css('overflow-y', 'hidden');
-        }
-      });
-      return item.find('span.rb-close').on('click', function() {
-        var clipPropFirst, clipPropLast, layoutProp;
-        $('body').css('overflow-y', 'auto');
-        layoutProp = getItemLayoutProp(item);
-        clipPropFirst = "rect(" + layoutProp.top + "px " + (layoutProp.left + layoutProp.width) + "px " + (layoutProp.top + layoutProp.height) + "px " + layoutProp.left + "px)";
-        clipPropLast = 'auto';
-        _this.current = -1;
-        overlay.css({
-          clip: (Modernizr.csstransitions ? clipPropFirst : clipPropLast),
-          opacity: (Modernizr.csstransitions ? 1 : 0),
-          pointerEvents: 'none'
+              item.data('isExpanded', false);
+              return _this.finished = true;
+            });
+          }), 25);
         });
-        if (Modernizr.csstransitions) {
-          return overlay.on(_this.transEndEventName, function() {
-            overlay.off(_this.transEndEventName);
-            return setTimeout((function() {
-              return overlay.css('opacity', 0).on(_this.transEndEventName, function() {
-                overlay.off(this.transEndEventName).css({
-                  clip: clipPropLast,
-                  zIndex: -1
-                });
-                return item.data('isExpanded', false);
-              });
-            }), 25);
-          });
-        } else {
-          overlay.css('z-index', -1);
-          return item.data('isExpanded', false);
-        }
-      });
+      } else {
+        overlay.css('z-index', -1);
+        item.data('isExpanded', false);
+        return this.finished = true;
+      }
     };
 
     return App;

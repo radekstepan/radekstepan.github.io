@@ -99,7 +99,7 @@ a {
   font-size: 65%;
   font-weight: 300;
 }
-.codrops-top {
+.page-top {
   line-height: 3.5;
   font-size: 0.688em;
   background: url("../img/irongrip.png");
@@ -107,27 +107,27 @@ a {
   z-index: 9999;
   position: relative;
 }
-.codrops-top a {
+.page-top a {
   padding: 0 1em;
   letter-spacing: 0.1em;
   color: #fff;
   display: inline-block;
 }
-.codrops-top a:hover {
+.page-top a:hover {
   background: rgba(255,255,255,0.1);
 }
-.codrops-top span.right {
+.page-top span.right {
   float: right;
 }
-.codrops-top span.right a {
+.page-top span.right a {
   float: left;
   display: block;
 }
-.codrops-demos {
+.page-demos {
   float: right;
   padding-top: 0.625em;
 }
-.codrops-demos a {
+.page-demos a {
   display: inline-block;
   margin: 0.625em;
   color: #666;
@@ -136,12 +136,12 @@ a {
   line-height: 2;
   border-bottom: 4px solid transparent;
 }
-.codrops-demos a:hover {
+.page-demos a:hover {
   color: #000;
   border-color: #000;
 }
-.codrops-demos a.current-demo,
-.codrops-demos a.current-demo:hover {
+.page-demos a.current-demo,
+.page-demos a.current-demo:hover {
   color: #aaa;
   border-color: #aaa;
 }
@@ -294,9 +294,8 @@ a {
   padding: 4em;
   background: rgba(0,0,0,0.8);
 }
-.rb-content .body {
+.rb-content .scroll-pane {
   height: 10em;
-  overflow-y: auto;
 }
 .rb-content h3 {
   font-size: 4em;
@@ -329,22 +328,52 @@ a {
   font-size: 2.5em;
   font-weight: normal;
 }
-@media screen and (max-width: 63.125em) {
-  .rb-grid li,
-  .rb-grid li.rb-span-2,
-  .rb-grid li.rb-span-4 {
-    width: 100%;
-    height: 10em;
-    text-align: left;
-  }
-  .rb-grid li[class^="icon-"]:before,
-  .rb-grid li[class*=" icon-"]:before {
-    font-size: 6em;
-    left: auto;
-    right: 0;
-    line-height: 2.5;
-  }
-  .rb-grid li > div {
-    text-align: center;
-  }
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+.jspContainer .jspPane {
+  position: absolute;
+  width: 100% !important;
+  left: 0 !important;
+}
+.jspContainer .jspPane > * {
+  padding-right: 23px;
+}
+.jspContainer:hover .jspVerticalBar {
+  opacity: 1;
+}
+.jspContainer .jspVerticalBar {
+  position: absolute;
+  top: 0px;
+  right: 1%;
+  width: 9px;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+}
+.jspContainer .jspVerticalBar .jspCap {
+  height: 5px;
+  display: block;
+}
+.jspContainer .jspVerticalBar .jspTrack {
+  background: rgba(242,242,242,0.5);
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.1), inset 1px 0 4px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  position: relative;
+}
+.jspContainer .jspVerticalBar .jspTrack .jspDrag {
+  background: #fff;
+  position: relative;
+  box-shadow: inset -1px 0 8px rgba(0,0,0,0.05);
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+.jspContainer .jspCorner {
+  background: #fff;
+  float: left;
+  height: 100%;
 }
