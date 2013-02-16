@@ -6,7 +6,7 @@ $special = $event.special.debouncedresize =
     teardown: -> $(this).off 'resize', $special.handler
     handler: (event, execAsap) ->
         context = this
-        args = arguments_
+        args = arguments
         dispatch = ->
             event.type = 'debouncedresize'
             $event.dispatch.apply context, args

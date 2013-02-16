@@ -17,7 +17,7 @@
     handler: function(event, execAsap) {
       var args, context, dispatch;
       context = this;
-      args = arguments_;
+      args = arguments;
       dispatch = function() {
         event.type = 'debouncedresize';
         return $event.dispatch.apply(context, args);
