@@ -22,4 +22,13 @@ class exports.HomeDocument extends blað.Type
                 # Push it.
                 @projects.push ch
 
+        # Sort projects on the "date".
+        @projects.sort (a, b) ->
+            if a.date > b.date then -1
+            else
+                if a.date is b.date
+                    a.title.localeCompare(b.title)
+                else
+                    1
+
         done @
