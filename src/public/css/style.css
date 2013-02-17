@@ -339,7 +339,6 @@ body {
 }
 a {
   cursor: pointer;
-  color: #555;
   text-decoration: none;
 }
 .main {
@@ -447,6 +446,7 @@ a {
 .rb-grid li > a {
   background: inherit;
   text-decoration: none;
+  color: inherit;
 }
 .rb-grid li.disabled {
   cursor: default;

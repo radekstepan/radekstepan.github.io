@@ -36,12 +36,11 @@
             <header class="clearfix">
                 <h1>Work of Radek Stepan <span>A full stack developer</span></h1>  
                 <nav id="categories">
-                    <a data-category="1" class="current">All</a>
-                    <a data-category="2">JavaScript/Node.js</a>
-                    <a data-category="3">HTML/CSS</a>
-                    <a data-category="4">Python</a>
-                    <a data-category="5">PHP</a>
-                    <a data-category="6">Photoshop</a>
+                    <a data-category="all" class="current">All</a>
+                    <a data-category="js">JavaScript/Node.js</a>
+                    <a data-category="html">HTML/CSS</a>
+                    <a data-category="python">Python</a>
+                    <a data-category="php">PHP</a>
                 </nav>
             </header>
             
@@ -49,7 +48,9 @@
 
                 <ul id="rb-grid" class="rb-grid clearfix">
                     <% for p in @projects: %>
-                        <li class="<%= p.style %> style variant-0" data-category="<%= p.categories.join(',') %>">
+                        <li
+                            class="<%= p.style %> style variant-<%= Math.floor(Math.random() * 8) %>"
+                            data-category="<%= p.categories.join(',') %>">
                             <a class="link" href="<%= p.url %>">
                                 <span class="title"><%= p.title %></span>
                                 <span class="subtitle"><%= p.description %></span>

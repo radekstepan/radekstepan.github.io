@@ -60,9 +60,9 @@
       
         __out.push('</div>\n    </div>\n    ');
       
-        if (this.img) {
+        if (this.image) {
           __out.push('\n        <img src="');
-          __out.push(this.img);
+          __out.push(this.image);
           __out.push('" />\n    ');
         }
       

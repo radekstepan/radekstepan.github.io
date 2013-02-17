@@ -9,7 +9,7 @@
 
         <div class="scroll-pane"><%- @body %></div>
     </div>
-    <% if @img: %>
-        <img src="<%- @img %>" />
+    <% if @image: %>
+        <img src="<%- @image %>" />
     <% end %>
 </div>
