@@ -306,7 +306,10 @@
   font-weight: 400;
   src: url("../fonts/EntypoSocial.woff") format('woff'), url("../fonts/EntypoSocial.eot") format('eot'), url("../fonts/EntypoSocial.ttf") format('truetype'), url("../fonts/EntypoSocial.svg") format('svg');
 }
-html height: 100%font-size: 100%,
+html {
+  height: 100%;
+  font-size: 100%;
+}
 *,
 *:after,
 *:before {
@@ -327,6 +330,9 @@ html height: 100%font-size: 100%,
 .clearfix:after {
   clear: both;
 }
+:focus {
+  outline: none !important;
+}
 body {
   font-family: 'Lato', Calibri, Arial, sans-serif;
   background: #f9f9f9;
@@ -341,7 +347,7 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-.main {
+#main {
   width: 90%;
   max-width: 76em;
   margin: 0 auto;
@@ -370,7 +376,7 @@ a {
   font-size: 65%;
   font-weight: 300;
 }
-.page-top {
+#top {
   line-height: 3.5;
   font-size: 0.688em;
   background: url("../img/irongrip.png");
@@ -378,19 +384,19 @@ a {
   z-index: 9999;
   position: relative;
 }
-.page-top a {
+#top a {
   padding: 0 1em;
   letter-spacing: 0.1em;
   color: #fff;
   display: inline-block;
 }
-.page-top a:hover {
+#top a:hover {
   background: rgba(255,255,255,0.1);
 }
-.page-top span.right {
+#top span.right {
   float: right;
 }
-.page-top span.right a {
+#top span.right a {
   float: left;
   display: block;
 }
@@ -432,9 +438,9 @@ a {
   margin: 0 auto;
 }
 .rb-grid li {
-  width: 21%;
+  width: 24%;
   height: 5em;
-  margin: 0.5%;
+  margin: 0 0.5% 1% 0.5%;
   background: #8cc7df;
   color: #fff;
   display: block;
@@ -549,12 +555,17 @@ a {
   font-weight: 700;
   margin: 0 0 0.5em 0;
 }
+.rb-content p {
+  line-height: 1.5em;
+}
 .rb-content a {
   color: #fff;
-  font-size: 1.5em;
+  text-decoration: underline;
 }
 .rb-content a.github {
+  font-size: 1.5em;
   text-align: middle;
+  text-decoration: none;
 }
 .rb-content a.github:before {
   font-family: "EntypoSocial";
@@ -595,7 +606,6 @@ a {
   right: 1%;
   width: 9px;
   height: 100%;
-  opacity: 0;
   -webkit-transition: opacity 0.2s linear;
 }
 .jspContainer .jspVerticalBar .jspCap {

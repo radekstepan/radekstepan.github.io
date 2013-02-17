@@ -26,8 +26,8 @@
       $('body').css('overflow-y', 'auto');
     }
     return {
-      width: w,
-      height: h
+      'width': w,
+      'height': h
     };
   };
 
@@ -59,11 +59,20 @@
     App.prototype.finished = true;
 
     App.prototype.initialize = function() {
+      var height, scroll, selector, _i, _len, _ref;
+      this.winsize = getWindowSize();
+      height = this.winsize.height;
+      _ref = ['#top', '#header'];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        selector = _ref[_i];
+        height -= $(selector).outerHeight();
+        console.log(height);
+      }
+      (scroll = $('#main .main-scroll-pane')).css('height', height);
+      scroll.jScrollPane();
       this.items = $('#rb-grid > li');
       this.transEndEventName = this.transitions[Modernizr.prefixed('transition')];
-      this.winsize = getWindowSize();
       this.items.find('div.rb-content > div span').fitText(0.3).end().find('span.rb-city').fitText(0.5);
-      $('.scroll-pane').jScrollPane();
       this.items.each(this.initEvent);
       return $('nav#categories a').click(this.switchCategory);
     };
@@ -205,6 +214,8 @@
       return $.getJSON(url, function(data, textStatus, jqXHR) {
         var html;
         overlay.html(html = window.JST.template(data));
+        overlay.find('a:not(.github)').attr('target', '_blank');
+        overlay.find('.scroll-pane').jScrollPane();
         item.find('span.rb-close').click(function() {
           return _this.onClose(item);
         });

@@ -27,9 +27,11 @@ getWindowSize = ->
     $('body').css 'overflow-y', 'hidden'
     w = $(window).width()
     h = $(window).height()
-    $('body').css 'overflow-y', 'auto'    if @current is -1
-    width: w
-    height: h
+    $('body').css 'overflow-y', 'auto' if @current is -1
+    {
+        'width': w
+        'height': h
+    }
 
 class App
     
@@ -45,16 +47,23 @@ class App
     finished: true
 
     initialize: ->
+        @winsize = getWindowSize()
+
+        height = @winsize.height
+        for selector in [ '#top', '#header' ]
+            height -= $(selector).outerHeight()
+            console.log height
+
+        # jScrollPane for the listing.
+        (scroll = $('#main .main-scroll-pane')).css 'height', height
+        scroll.jScrollPane()
+
         @items = $('#rb-grid > li')
 
         @transEndEventName = @transitions[Modernizr.prefixed('transition')]
-        @winsize = getWindowSize()
 
         # Apply fittext plugin.
         @items.find('div.rb-content > div span').fitText(0.3).end().find('span.rb-city').fitText(0.5)
-        
-        # jScrollPane.
-        $('.scroll-pane').jScrollPane()
 
         # Init events.
         @items.each @initEvent
@@ -202,6 +211,12 @@ class App
         $.getJSON url, (data, textStatus, jqXHR) =>
             # Populate the item with the template.
             overlay.html html = window.JST.template data
+
+            # Make all links open in external window.
+            overlay.find('a:not(.github)').attr('target', '_blank')
+
+            # jScrollPane.
+            overlay.find('.scroll-pane').jScrollPane()
 
             # Attach on close handler.
             item.find('span.rb-close').click => @onClose item
