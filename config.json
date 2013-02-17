@@ -1,8 +1,8 @@
 {
-    "mongodb": "mongodb://localhost:27017/documents",
+    "mongodb": "mongodb://localhost:27017/radekstepan",
     "browserid": {
         "provider": "https://browserid.org/verify",
-        "salt":     "Q?RAf!CAkus?ejuCruKu",
+        "salt":     "$a@RE$rapeda&26phucr",
         "users": [
             "radek.stepan@gmail.com"
         ]

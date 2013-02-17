@@ -1,6 +1,6 @@
-# blað example site
+# radekstepan.com
 
-An example site powered by [blað](https://github.com/radekstepan/blad) CMS.
+My portfolio web in [blað](https://github.com/radekstepan/blad) CMS.
 
 ## Getting started
 
@@ -58,6 +58,20 @@ $ node start.js
 ```
 
 If you need to define your custom page types and styles (you do), follow the guide associated with the [blað](https://github.com/radekstepan/blad) CMS project page.
+
+## Development
+
+To recompile the style:
+
+```bash
+$ stylus css/style.styl --watch
+```
+
+To recompile the app:
+
+```bash
+$ coffee -cw js/app.coffee
+```
 
 ## Database backup
 
