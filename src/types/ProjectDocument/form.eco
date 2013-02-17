@@ -25,10 +25,10 @@
 
 <div class="twelve columns">
     <label>Project categories</label>
-    <input type="checkbox" name="categories[]" value="js" /> JavaScript/Node.js
-    <input style="margin-left:10px" type="checkbox" name="categories[]" value="html" /> HTML/CSS
-    <input style="margin-left:10px" type="checkbox" name="categories[]" value="python" /> Python
-    <input style="margin-left:10px" type="checkbox" name="categories[]" value="php" /> PHP
+    <input <% if @['category-all']?: %>checked="checked" <% end %>type="checkbox" name="category-all" /> All
+    <% for slug, label of { 'js': 'JavaScript/Node.js', 'html': 'HTML/CSS', 'python': 'Python', 'php': 'PHP' }: %>
+        <input <% if @["category-#{slug}"]?: %>checked="checked" <% end %>style="margin-left:10px" type="checkbox" name="category-<%= slug %>" /> <%= label %>
+    <% end %>
     <br /><br />
 </div>
 
