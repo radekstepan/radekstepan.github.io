@@ -25,7 +25,7 @@
     </head>
     <body>
         <div class="container"> 
-            <div id="top" class="clearfix">
+            <div id="top" class="notgrid clearfix">
                 <span class="right">
                     <a href="https://github.com/radekstepan" target="_blank">GitHub</a>
                     <a href="http://uk.linkedin.com/in/r4dek/" target="_blank">LinkedIn</a>
@@ -36,7 +36,7 @@
                 </span>
             </div>
             
-            <header id="header" class="clearfix">
+            <header id="header" class="notgrid clearfix">
                 <h1>Work of Radek Stepan <span>A full stack developer</span></h1>  
                 <nav id="categories">
                     <a data-category="all" class="current">All</a>
@@ -64,6 +64,7 @@
                         <% end %>
                     </ul>
                 </div>
+                <footer class="fadeout"></footer>
             </div>
         </div>
     </body>

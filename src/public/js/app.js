@@ -59,14 +59,12 @@
     App.prototype.finished = true;
 
     App.prototype.initialize = function() {
-      var height, scroll, selector, _i, _len, _ref;
+      var height, scroll;
       this.winsize = getWindowSize();
       height = this.winsize.height;
-      _ref = ['#top', '#header'];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        selector = _ref[_i];
-        height -= $(selector).outerHeight();
-      }
+      $('.notgrid').each(function(i, el) {
+        return height -= $(el).outerHeight();
+      });
       (scroll = $('#main .main-scroll-pane')).css('height', height);
       scroll.jScrollPane();
       this.items = $('#rb-grid > li');

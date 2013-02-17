@@ -49,9 +49,9 @@ class App
     initialize: ->
         @winsize = getWindowSize()
 
+        # Calculate the height available to the grid.
         height = @winsize.height
-        for selector in [ '#top', '#header' ]
-            height -= $(selector).outerHeight()
+        $('.notgrid').each (i, el) -> height -= $(el).outerHeight()
 
         # jScrollPane for the listing.
         (scroll = $('#main .main-scroll-pane')).css 'height', height

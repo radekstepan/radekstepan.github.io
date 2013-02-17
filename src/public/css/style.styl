@@ -13,6 +13,15 @@ render(colors)
 .style
     render(colors)
 
+gradient(a, b)
+    background: a
+    background: -moz-linear-gradient(top, a 0%, b 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,a), color-stop(100%,b))
+    background: -webkit-linear-gradient(top, a 0%, b 100%)
+    background: -o-linear-gradient(top, a 0%, b 100%)
+    background: -ms-linear-gradient(top, a 0%, b 100%)
+    background: linear-gradient(to bottom, a 0%, b 100%)
+
 @font-face {
     font-family: 'Lato'
     font-style: normal
@@ -105,7 +114,8 @@ a
     width: 90%
     max-width: 76em
     margin: 0 auto
-    padding: 0 1.875em 3.125em 1.875em
+    padding: 0 1.875em 0 1.875em
+    position: relative
 
 .container
     width: 100%
@@ -177,6 +187,14 @@ a
         &.current, &.current:hover
             color: #aaa
             border-color: #aaa
+
+.fadeout
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 1em
+    gradient(rgba(255,255,255,0), rgba(255,255,255,0.3))
 
 .support-note
     clear: both
@@ -368,6 +386,7 @@ a
         height: 100%
         // opacity: 0
         -webkit-transition: opacity 0.2s linear
+        z-index: 2
 
         .jspCap
             height: 5px
