@@ -1,3 +1,275 @@
+.style.curious.variant-0 {
+  background: #39c;
+}
+.style.curious.variant-1 {
+  background: #2e8bba;
+}
+.style.curious.variant-2 {
+  background: #2a7da7;
+}
+.style.curious.variant-3 {
+  background: #257095;
+}
+.style.curious.variant-4 {
+  background: #216283;
+}
+.style.curious.variant-5 {
+  background: #1c5470;
+}
+.style.curious.variant-6 {
+  background: #17465e;
+}
+.style.curious.variant-7 {
+  background: #13394b;
+}
+.style.turq.variant-0 {
+  background: #3cc;
+}
+.style.turq.variant-1 {
+  background: #2ebaba;
+}
+.style.turq.variant-2 {
+  background: #2aa7a7;
+}
+.style.turq.variant-3 {
+  background: #259595;
+}
+.style.turq.variant-4 {
+  background: #218383;
+}
+.style.turq.variant-5 {
+  background: #1c7070;
+}
+.style.turq.variant-6 {
+  background: #175e5e;
+}
+.style.turq.variant-7 {
+  background: #134b4b;
+}
+.style.strikemaster.variant-0 {
+  background: #969;
+}
+.style.strikemaster.variant-1 {
+  background: #8b5d8b;
+}
+.style.strikemaster.variant-2 {
+  background: #7d547d;
+}
+.style.strikemaster.variant-3 {
+  background: #704a70;
+}
+.style.strikemaster.variant-4 {
+  background: #624162;
+}
+.style.strikemaster.variant-5 {
+  background: #543854;
+}
+.style.strikemaster.variant-6 {
+  background: #462f46;
+}
+.style.strikemaster.variant-7 {
+  background: #392639;
+}
+.style.crail.variant-0 {
+  background: #c24747;
+}
+.style.crail.variant-1 {
+  background: #b53c3c;
+}
+.style.crail.variant-2 {
+  background: #a33636;
+}
+.style.crail.variant-3 {
+  background: #913030;
+}
+.style.crail.variant-4 {
+  background: #7f2a2a;
+}
+.style.crail.variant-5 {
+  background: #6d2424;
+}
+.style.crail.variant-6 {
+  background: #5c1e1e;
+}
+.style.crail.variant-7 {
+  background: #4a1818;
+}
+.style.terracotta.variant-0 {
+  background: #e2674a;
+  color: #333;
+}
+.style.terracotta.variant-1 {
+  background: #de5333;
+}
+.style.terracotta.variant-2 {
+  background: #d44422;
+}
+.style.terracotta.variant-3 {
+  background: #bd3c1e;
+}
+.style.terracotta.variant-4 {
+  background: #a5351b;
+}
+.style.terracotta.variant-5 {
+  background: #8e2e17;
+}
+.style.terracotta.variant-6 {
+  background: #772613;
+}
+.style.terracotta.variant-7 {
+  background: #601f0f;
+}
+.style.golden.variant-0 {
+  background: #fc6;
+  color: #333;
+}
+.style.golden.variant-1 {
+  background: #ffc146;
+  color: #333;
+}
+.style.golden.variant-2 {
+  background: #ffb726;
+  color: #333;
+}
+.style.golden.variant-3 {
+  background: #ffac06;
+}
+.style.golden.variant-4 {
+  background: #e49800;
+}
+.style.golden.variant-5 {
+  background: #c48300;
+}
+.style.golden.variant-6 {
+  background: #a46d00;
+}
+.style.golden.variant-7 {
+  background: #845800;
+}
+.style.york.variant-0 {
+  background: #9c9;
+  color: #333;
+}
+.style.york.variant-1 {
+  background: #84c184;
+  color: #333;
+}
+.style.york.variant-2 {
+  background: #6eb76e;
+  color: #333;
+}
+.style.york.variant-3 {
+  background: #59ac59;
+}
+.style.york.variant-4 {
+  background: #4c984c;
+}
+.style.york.variant-5 {
+  background: #418341;
+}
+.style.york.variant-6 {
+  background: #376d37;
+}
+.style.york.variant-7 {
+  background: #2c582c;
+}
+.style.patina.variant-0 {
+  background: #699;
+}
+.style.patina.variant-1 {
+  background: #5d8b8b;
+}
+.style.patina.variant-2 {
+  background: #547d7d;
+}
+.style.patina.variant-3 {
+  background: #4a7070;
+}
+.style.patina.variant-4 {
+  background: #416262;
+}
+.style.patina.variant-5 {
+  background: #385454;
+}
+.style.patina.variant-6 {
+  background: #2f4646;
+}
+.style.patina.variant-7 {
+  background: #263939;
+}
+.style.hopbush.variant-0 {
+  background: #c69;
+  color: #333;
+}
+.style.hopbush.variant-1 {
+  background: #c5518b;
+}
+.style.hopbush.variant-2 {
+  background: #bc3f7d;
+}
+.style.hopbush.variant-3 {
+  background: #a83870;
+}
+.style.hopbush.variant-4 {
+  background: #933162;
+}
+.style.hopbush.variant-5 {
+  background: #7e2a54;
+}
+.style.hopbush.variant-6 {
+  background: #6a2346;
+}
+.style.hopbush.variant-7 {
+  background: #551c39;
+}
+.style.sea.variant-0 {
+  background: #396;
+}
+.style.sea.variant-1 {
+  background: #2e8b5d;
+}
+.style.sea.variant-2 {
+  background: #2a7d54;
+}
+.style.sea.variant-3 {
+  background: #25704a;
+}
+.style.sea.variant-4 {
+  background: #216241;
+}
+.style.sea.variant-5 {
+  background: #1c5438;
+}
+.style.sea.variant-6 {
+  background: #17462f;
+}
+.style.sea.variant-7 {
+  background: #133926;
+}
+.style.kimberly.variant-0 {
+  background: #669;
+}
+.style.kimberly.variant-1 {
+  background: #5d5d8b;
+}
+.style.kimberly.variant-2 {
+  background: #54547d;
+}
+.style.kimberly.variant-3 {
+  background: #4a4a70;
+}
+.style.kimberly.variant-4 {
+  background: #414162;
+}
+.style.kimberly.variant-5 {
+  background: #383854;
+}
+.style.kimberly.variant-6 {
+  background: #2f2f46;
+}
+.style.kimberly.variant-7 {
+  background: #262639;
+}
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -214,39 +486,6 @@ a {
 }
 .rb-grid li:hover span.title {
   opacity: 1;
-}
-.rb-grid li.one {
-  background: #39c;
-}
-.rb-grid li.two {
-  background: #3cc;
-}
-.rb-grid li.three {
-  background: #969;
-}
-.rb-grid li.four {
-  background: #c24747;
-}
-.rb-grid li.five {
-  background: #e2674a;
-}
-.rb-grid li.six {
-  background: #fc6;
-}
-.rb-grid li.seven {
-  background: #9c9;
-}
-.rb-grid li.eight {
-  background: #699;
-}
-.rb-grid li.nine {
-  background: #c69;
-}
-.rb-grid li.ten {
-  background: #396;
-}
-.rb-grid li.eleven {
-  background: #669;
 }
 .rb-overlay {
   opacity: 0;

@@ -1,3 +1,18 @@
+colors = (curious #3399CC) (turq #33CCCC) (strikemaster #996699) (crail #C24747) (terracotta #E2674A) (golden #FFCC66) (york #99CC99) (patina #669999) (hopbush #CC6699) (sea #339966)   (kimberly #666699)
+
+render(colors)
+    for color in colors
+        &.{color[0]}
+            for percentage, i in 0% 9% 18% 27% 36% 45% 54% 63%
+                &.variant-{i}
+                    bg = darken(color[1], percentage)
+                    background: bg
+                    if light(darken(bg, 10%))
+                        color: #333
+
+.style
+    render(colors)
+
 @font-face
     font-family: 'Lato'
     font-style: normal
@@ -219,29 +234,6 @@ a
         
         &:hover span.title
             opacity: 1
-
-        &.one
-            background: #3399CC
-        &.two
-            background: #33CCCC
-        &.three
-            background: #996699
-        &.four
-            background: #C24747
-        &.five
-            background: #e2674a
-        &.six
-            background: #FFCC66
-        &.seven
-            background: #99CC99
-        &.eight
-            background: #669999
-        &.nine
-            background: #CC6699
-        &.ten
-            background: #339966
-        &.eleven
-            background: #666699
 
 .rb-overlay
     opacity: 0
