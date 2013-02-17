@@ -34,7 +34,11 @@
   App = (function() {
 
     function App() {
+      this.loadTemplate = __bind(this.loadTemplate, this);
+
       this.onClose = __bind(this.onClose, this);
+
+      this.showDetail = __bind(this.showDetail, this);
 
       this.onOpen = __bind(this.onOpen, this);
 
@@ -90,9 +94,6 @@
       item.on('click', function(e) {
         return _this.onOpen(item, e);
       });
-      item.find('span.rb-close').on('click', function() {
-        return _this.onClose(item);
-      });
       return $(document).keyup(function(e) {
         if (e.keyCode === 27) {
           return _this.onClose(item);
@@ -101,8 +102,7 @@
     };
 
     App.prototype.onOpen = function(item, e) {
-      var clipPropFirst, clipPropLast, layoutProp, overlay,
-        _this = this;
+      var link;
       if ($(e.target).closest('.rb-content').length) {
         return;
       }
@@ -117,7 +117,19 @@
       }
       item.data('isExpanded', true);
       this.current = item.index();
-      overlay = item.children('div.rb-overlay');
+      item.data('url', (link = item.find('a.link')).attr('href'));
+      link.removeAttr('href');
+      if (item.data('isLoaded')) {
+        return this.showDetail(item);
+      } else {
+        return this.loadTemplate(item, this.showDetail);
+      }
+    };
+
+    App.prototype.showDetail = function(item) {
+      var clipPropFirst, clipPropLast, layoutProp, overlay,
+        _this = this;
+      overlay = item.find('.rb-overlay');
       layoutProp = getItemLayoutProp(item);
       clipPropFirst = "rect(" + layoutProp.top + "px " + (layoutProp.left + layoutProp.width) + "px " + (layoutProp.top + layoutProp.height) + "px " + layoutProp.left + "px)";
       clipPropLast = "rect(0px " + this.winsize.width + "px " + this.winsize.height + "px 0px)";
@@ -155,7 +167,7 @@
       clipPropFirst = "rect(" + layoutProp.top + "px " + (layoutProp.left + layoutProp.width) + "px " + (layoutProp.top + layoutProp.height) + "px " + layoutProp.left + "px)";
       clipPropLast = 'auto';
       this.current = -1;
-      overlay = item.children('div.rb-overlay');
+      overlay = item.find('.rb-overlay');
       overlay.css({
         clip: (Modernizr.csstransitions ? clipPropFirst : clipPropLast),
         opacity: (Modernizr.csstransitions ? 1 : 0),
@@ -172,15 +184,33 @@
                 zIndex: -1
               });
               item.data('isExpanded', false);
-              return _this.finished = true;
+              _this.finished = true;
+              return item.find('a.link').attr('href', item.data('url'));
             });
           }), 25);
         });
       } else {
         overlay.css('z-index', -1);
         item.data('isExpanded', false);
-        return this.finished = true;
+        this.finished = true;
+        return item.find('a.link').attr('href', item.data('url'));
       }
+    };
+
+    App.prototype.loadTemplate = function(item, cb) {
+      var overlay, url,
+        _this = this;
+      overlay = item.find('.rb-overlay');
+      url = item.data('url');
+      return $.getJSON(url, function(data, textStatus, jqXHR) {
+        var html;
+        overlay.html(html = window.JST.template(data));
+        item.find('span.rb-close').click(function() {
+          return _this.onClose(item);
+        });
+        item.data('isLoaded', true);
+        return cb(item);
+      });
     };
 
     return App;

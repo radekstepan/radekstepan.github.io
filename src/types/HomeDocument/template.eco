@@ -14,6 +14,7 @@
         <script src="/site/js/vendor/jquery.jscrollpane.js"></script>
         <script src="/site/js/vendor/jquery.fittext.js"></script>
         
+        <script src="/site/js/template.js"></script>
         <script src="/site/js/app.js"></script>
         <script>
             $(function() {
@@ -26,8 +27,8 @@
         <div class="container"> 
             <div class="page-top clearfix">
                 <span class="right">
-                    <a href="https://github.com/radekstepan" target="_new">GitHub</a>
-                    <a href="http://uk.linkedin.com/in/r4dek/" target="_new">LinkedIn</a>
+                    <a href="https://github.com/radekstepan" target="_blank">GitHub</a>
+                    <a href="http://uk.linkedin.com/in/r4dek/" target="_blank">LinkedIn</a>
                     <a>dev@radekstepan.com</a>
                 </span>
             </div>
@@ -47,104 +48,15 @@
             <div class="main">
 
                 <ul id="rb-grid" class="rb-grid clearfix">
-                    <li class="crail style variant-0" data-category="1">
-                        <span class="title">ukraine</span>
-                        <span class="subtitle">Open Source Node.js PaaS with automatic Proxy and CLI client</span>
-                        <div class="rb-overlay">
-                            <span class="rb-close">close</span>
-                            <div class="rb-content">
-                                <div class="wrap">
-                                    <h3>ukraine</h3>
-
-                                    <a href="https://github.com/radekstepan/intermine-steps" target="_new" class="github">https://github.com/radekstepan/intermine-steps</a>
-
-                                    <div class="scroll-pane">
-                                        <p>Spawns a node-http-proxy server that dynamically watches for changes in a routing table. All (useful) routes to haibu have been overwritten using promises.</p>
-
-                                        <p>New method for posting env vars has been added.</p>
-
-                                        <p>Token authentication per ukraine instance has been added too.</p>
-                                    </div>
-                                </div>
-                                <img src="img/apps/tableur.png" />
-                            </div>
-                        </div>
-                    </li>
-                    <li class="curious style variant-0" data-category="1">
-                        <span class="title">kontu</span>
-                        <span class="subtitle">A web service for a ledger based budgetting app using MongoDB as a data store</span>
-                        <div class="rb-overlay">
-                            <span class="rb-close">close</span>
-                            <div class="rb-content">
-                                <div class="wrap">
-                                    <h3>kontu</h3>
-
-                                    <a href="https://github.com/radekstepan/intermine-steps" target="_new" class="github">https://github.com/radekstepan/intermine-steps</a>
-
-                                    <div class="scroll-pane">
-                                        <p>Spawns a node-http-proxy server that dynamically watches for changes in a routing table. All (useful) routes to haibu have been overwritten using promises.</p>
-
-                                        <p>New method for posting env vars has been added.</p>
-
-                                        <p>Token authentication per ukraine instance has been added too.</p>
-
-                                        <p>Each one of the boxes will contain an element (overlay) that will be of position fixed. This element will actually spread over all the page but we won’t see it because the opacity will be set to 0. When we click on a box, we’ll use clip: rect() to crop the respective part of the inner fixed element. Then we will animate the clip to reveal all the width and height of the overlay which is our entire viewport</p>
-                                    </div>
-                                </div>
-                                <img src="img/apps/flaskbudget.jpg" />
-                            </div>
-                        </div>
-                    </li>
-                    <li class="golden style variant-0" data-category="2">
-                        <span class="title">intermine-steps</span>
-                        <span class="subtitle">InterMine 2.0 Prototype preserving history of Steps</span>
-                        <div class="rb-overlay">
-                            <span class="rb-close">close</span>
-                            <div class="rb-content">
-                                <div class="wrap">
-                                    <h3>intermine-steps</h3>
-
-                                    <a href="https://github.com/radekstepan/intermine-steps" target="_new" class="github">https://github.com/radekstepan/intermine-steps</a>
-
-                                    <div class="scroll-pane">
-                                        <p>Spawns a node-http-proxy server that dynamically watches for changes in a routing table. All (useful) routes to haibu have been overwritten using promises.</p>
-
-                                        <p>New method for posting env vars has been added.</p>
-
-                                        <p>Token authentication per ukraine instance has been added too.</p>
-
-                                        <p>Each one of the boxes will contain an element (overlay) that will be of position fixed. This element will actually spread over all the page but we won’t see it because the opacity will be set to 0. When we click on a box, we’ll use clip: rect() to crop the respective part of the inner fixed element. Then we will animate the clip to reveal all the width and height of the overlay which is our entire viewport</p>
-                                    </div>
-                                </div>
-                                <img src="img/apps/steps.png" />
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sea style variant-0" data-category="1,2">
-                        <span class="title">FlaskBudget</span>
-                        <span class="subtitle">A Budget application for couples in Flask</span>
-                        <div class="rb-overlay">
-                            <span class="rb-close">close</span>
-                            <div class="rb-content">
-                                <div class="wrap">
-                                    <h3>FlaskBudget</h3>
-
-                                    <a href="https://github.com/radekstepan/intermine-steps" target="_new" class="github">https://github.com/radekstepan/intermine-steps</a>
-
-                                    <div class="scroll-pane">
-                                        <p>Spawns a node-http-proxy server that dynamically watches for changes in a routing table. All (useful) routes to haibu have been overwritten using promises.</p>
-
-                                        <p>New method for posting env vars has been added.</p>
-
-                                        <p>Token authentication per ukraine instance has been added too.</p>
-
-                                        <p>Each one of the boxes will contain an element (overlay) that will be of position fixed. This element will actually spread over all the page but we won’t see it because the opacity will be set to 0. When we click on a box, we’ll use clip: rect() to crop the respective part of the inner fixed element. Then we will animate the clip to reveal all the width and height of the overlay which is our entire viewport</p>
-                                    </div>
-                                </div>
-                                <img src="img/apps/ukraine.png" />
-                            </div>
-                        </div>
-                    </li>
+                    <% for p in @projects: %>
+                        <li class="<%= p.style %> style variant-0" data-category="<%= p.categories.join(',') %>">
+                            <a class="link" href="<%= p.url %>">
+                                <span class="title"><%= p.title %></span>
+                                <span class="subtitle"><%= p.description %></span>
+                                <div class="rb-overlay"><!-- dynamically populate --></div>
+                            </a>
+                        </li>
+                    <% end %>
                 </ul>
                 
             </div>

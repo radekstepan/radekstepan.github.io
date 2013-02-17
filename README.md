@@ -61,16 +61,22 @@ If you need to define your custom page types and styles (you do), follow the gui
 
 ## Development
 
-To recompile the style:
+To recompile the style using `stylus`:
 
 ```bash
-$ stylus css/style.styl --watch
+$ stylus src/public/css/style.styl --watch
 ```
 
-To recompile the app:
+To recompile the app using `coffee-script`:
 
 ```bash
-$ coffee -cw js/app.coffee
+$ coffee -cw src/public/js/app.coffee
+```
+
+To recompile the template using `eco`:
+
+```bash
+$ eco src/public/js/template.eco -i JST
 ```
 
 ## Database backup

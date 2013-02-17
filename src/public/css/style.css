@@ -444,6 +444,10 @@ a {
   cursor: pointer;
   position: relative;
 }
+.rb-grid li > a {
+  background: inherit;
+  text-decoration: none;
+}
 .rb-grid li.disabled {
   cursor: default;
 }

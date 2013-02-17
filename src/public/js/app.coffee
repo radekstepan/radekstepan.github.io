@@ -90,10 +90,10 @@ class App
         item = $(el)
         
         # On open.
-        item.on 'click', (e) => @onOpen item, e
+        item.on 'click', (e) =>
+            @onOpen item, e
 
         # On close.
-        item.find('span.rb-close').on 'click', => @onClose item
         $(document).keyup (e) => if e.keyCode is 27 then @onClose item
 
     onOpen: (item, e) =>
@@ -114,11 +114,21 @@ class App
 
         @current = item.index()
 
-        overlay = item.children('div.rb-overlay')
+        # Hide the URL.
+        item.data 'url', (link = item.find('a.link')).attr('href')
+        link.removeAttr 'href'
+
+        # Have we loaded this object already?
+        if item.data('isLoaded') then @showDetail item
+        # Load the template first, then show detail.
+        else @loadTemplate item, @showDetail
+
+    showDetail: (item) =>
+        overlay = item.find('.rb-overlay')
         layoutProp = getItemLayoutProp(item)
         clipPropFirst = "rect(#{layoutProp.top}px #{layoutProp.left + layoutProp.width}px #{layoutProp.top + layoutProp.height}px #{layoutProp.left}px)"
         clipPropLast = "rect(0px #{@winsize.width}px #{@winsize.height}px 0px)"
-        
+
         overlay.css
             transformOrigin: "#{layoutProp.left}px #{layoutProp.top}px"
             clip: (if Modernizr.csstransitions then clipPropFirst else clipPropLast)
@@ -152,7 +162,7 @@ class App
         # Reset.
         @current = -1
 
-        overlay = item.children('div.rb-overlay')
+        overlay = item.find('.rb-overlay')
         overlay.css
             clip: (if Modernizr.csstransitions then clipPropFirst else clipPropLast)
             opacity: (if Modernizr.csstransitions then 1 else 0)
@@ -170,6 +180,8 @@ class App
                         # We closed.
                         item.data 'isExpanded', false
                         @finished = true
+                        # Show the URL.
+                        item.find('a.link').attr('href', item.data('url'))
                 ), 25
 
         else
@@ -177,5 +189,29 @@ class App
             # We closed.
             item.data 'isExpanded', false
             @finished = true
+            # Show the URL.
+            item.find('a.link').attr('href', item.data('url'))
+
+    loadTemplate: (item, cb) =>
+        overlay = item.find('.rb-overlay')
+        url = item.data('url')
+
+        # TODO: Show a loading sign.
+
+        # Load the content.
+        $.getJSON url, (data, textStatus, jqXHR) =>
+            # Populate the item with the template.
+            overlay.html html = window.JST.template data
+
+            # Attach on close handler.
+            item.find('span.rb-close').click => @onClose item
+
+            # Say this object is loaded.
+            item.data 'isLoaded', true
+            
+            # TODO: Hide loading sign.
+            
+            # Say we are done.
+            cb item
 
 @App = App

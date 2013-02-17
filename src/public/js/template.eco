@@ -1,0 +1,15 @@
+<span class="rb-close">close</span>
+<div class="rb-content">
+    <div class="wrap">
+        <h3><%= @title %></h3>
+
+        <% if @github: %>
+            <a href="<%= @github %>" target="_blank" class="github"><%= @github %></a>
+        <% end %>
+
+        <div class="scroll-pane"><%- @body %></div>
+    </div>
+    <% if @img: %>
+        <img src="<%- @img %>" />
+    <% end %>
+</div>
