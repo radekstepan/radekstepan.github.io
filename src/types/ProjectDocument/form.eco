@@ -1,0 +1,50 @@
+<div class="six columns">
+    <label>Project title</label>
+    <input type="text" name="title" value="<%= @title %>" />
+</div>
+
+<div class="six columns">
+    <label>GitHub URL</label>
+    <input type="text" name="github" value="<%= @github %>" />
+</div>
+
+<div class="six columns">
+    <label>Color style</label>
+    <select name="style" style="margin:0 0 12px 0">
+        <% for color in [ 'curious', 'turq', 'strikemaster', 'crail', 'terracotta', 'golden', 'york', 'patina', 'hopbush', 'sea', 'kimberly' ]: %>
+            <option value="<%= color %>" <% if @style is color: %>selected="selected"<% end %>><%= color.charAt(0).toUpperCase() + color.slice(1) %></option>
+        <% end %>
+    </select>
+</div>
+
+<div class="six columns">
+    <label>Project background image</label>
+    <input type="hidden" name="image" value="<%= @image %>" />
+    <input type="file" data-custom="file" data-target="image" />
+</div>
+
+<div class="twelve columns">
+    <label>Project categories</label>
+    <input type="checkbox" name="categories[]" value="js" /> JavaScript/Node.js
+    <input style="margin-left:10px" type="checkbox" name="categories[]" value="html" /> HTML/CSS
+    <input style="margin-left:10px" type="checkbox" name="categories[]" value="python" /> Python
+    <input style="margin-left:10px" type="checkbox" name="categories[]" value="php" /> PHP
+    <br /><br />
+</div>
+
+<div class="twelve columns">
+    <label>Project body</label>
+    <div class="row">
+        <div class="nine columns">
+            <textarea name="body"><%- @body %></textarea>
+        </div>
+        <div class="three columns">
+            <pre># 1<sup>st</sup> level</pre>
+            <pre>## 2<sup>nd</sup> level</pre>
+            <pre>* An item in an unordered list</pre>
+            <pre>    * A subitem</pre>
+            <pre>1. An item in an ordered list</pre>
+            <pre>*emphasis* or **strong**</pre>
+        </div>
+    </div>
+</div>

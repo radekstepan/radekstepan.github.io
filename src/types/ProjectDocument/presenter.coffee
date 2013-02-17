@@ -2,7 +2,7 @@
 
 marked = require 'marked'
 
-class exports.BasicDocument extends blað.Type
+class exports.ProjectDocument extends blað.Type
 
     render: (done) ->
         # Markdown?
