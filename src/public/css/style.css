@@ -439,7 +439,7 @@ a {
 }
 .rb-grid li {
   width: 24%;
-  height: 5em;
+  height: 7em;
   margin: 0 0.5% 1% 0.5%;
   background: #8cc7df;
   color: #fff;
@@ -472,6 +472,36 @@ a {
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+}
+.rb-grid li span.title.size-0 {
+  font-size: 2em;
+}
+.rb-grid li span.title.size-1 {
+  font-size: 1.8em;
+}
+.rb-grid li span.title.size-2 {
+  font-size: 1.6em;
+}
+.rb-grid li span.title.size-3 {
+  font-size: 1.4em;
+}
+.rb-grid li span.title.size-4 {
+  font-size: 1.2em;
+}
+.rb-grid li span.title.size-5 {
+  font-size: 1em;
+}
+.rb-grid li span.title.size-6 {
+  font-size: 0.7999999999999998em;
+}
+.rb-grid li span.title.size-7 {
+  font-size: 0.5999999999999999em;
+}
+.rb-grid li span.title.size-8 {
+  font-size: 0.3999999999999999em;
+}
+.rb-grid li span.title.size-9 {
+  font-size: 0.19999999999999996em;
 }
 .rb-grid li span.subtitle {
   display: block;

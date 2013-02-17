@@ -66,7 +66,6 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         selector = _ref[_i];
         height -= $(selector).outerHeight();
-        console.log(height);
       }
       (scroll = $('#main .main-scroll-pane')).css('height', height);
       scroll.jScrollPane();

@@ -26,7 +26,7 @@
 <div class="twelve columns">
     <label>Project categories</label>
     <input <% if @['category-all']?: %>checked="checked" <% end %>type="checkbox" name="category-all" /> All
-    <% for slug, label of { 'js': 'JavaScript/Node.js', 'html': 'HTML/CSS', 'python': 'Python', 'php': 'PHP' }: %>
+    <% for slug, label of { 'js': 'JavaScript/Node.js', 'html': 'HTML/CSS', 'prolog': 'Prolog', 'python': 'Python', 'php': 'PHP' }: %>
         <input <% if @["category-#{slug}"]?: %>checked="checked" <% end %>style="margin-left:10px" type="checkbox" name="category-<%= slug %>" /> <%= label %>
     <% end %>
     <br /><br />

@@ -52,7 +52,6 @@ class App
         height = @winsize.height
         for selector in [ '#top', '#header' ]
             height -= $(selector).outerHeight()
-            console.log height
 
         # jScrollPane for the listing.
         (scroll = $('#main .main-scroll-pane')).css 'height', height

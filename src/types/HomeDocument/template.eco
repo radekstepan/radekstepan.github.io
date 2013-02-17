@@ -42,6 +42,7 @@
                     <a data-category="all" class="current">All</a>
                     <a data-category="js">JavaScript/Node.js</a>
                     <a data-category="html">HTML/CSS</a>
+                    <a data-category="prolog">Prolog</a>
                     <a data-category="python">Python</a>
                     <a data-category="php">PHP</a>
                 </nav>
@@ -52,10 +53,10 @@
                     <ul id="rb-grid" class="rb-grid clearfix">
                         <% for p in @projects: %>
                             <li
-                                class="<%= p.style %> style variant-<%= Math.floor(Math.random() * 8) %>"
+                                class="<%= p.style %> style variant-<%= Math.floor(Math.random() * 5) %>"
                                 data-category="<%= p.categories.join(',') %>">
                                 <a class="link" href="<%= p.url %>">
-                                    <span class="title"><%= p.title %></span>
+                                    <span class="title size-<%= Math.floor(p.title.length/5) %>"><%= p.title %></span>
                                     <span class="subtitle"><%= p.description %></span>
                                     <div class="rb-overlay"><!-- dynamically populate --></div>
                                 </a>

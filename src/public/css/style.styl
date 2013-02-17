@@ -193,7 +193,7 @@ a
 
     li
         width: 24%
-        height: 5em
+        height: 7em
         margin: 0 0.5% 1% 0.5%
         background: #8CC7DF
         color: #fff
@@ -226,6 +226,10 @@ a
             -webkit-transition: opacity 0.3s ease-in-out
             -moz-transition: opacity 0.3s ease-in-out
             transition: opacity 0.3s ease-in-out
+
+            for i in 0...10
+                &.size-{i}
+                    font-size: 2 - i * 0.2  em
 
         span.subtitle
             display: block
