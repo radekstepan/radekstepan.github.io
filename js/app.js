@@ -72,9 +72,13 @@
       return $('ul#rb-grid li').each(function(i, el) {
         el = $(el);
         if (__indexOf.call(el.attr('data-category').split(','), cat) >= 0) {
-          return el.removeClass('disabled');
+          return el.removeClass('disabled').animate({
+            'opacity': 1
+          }, 500);
         } else {
-          return el.addClass('disabled');
+          return el.addClass('disabled').animate({
+            'opacity': 0.1
+          }, 500);
         }
       });
     };

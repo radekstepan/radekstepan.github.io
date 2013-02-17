@@ -82,9 +82,9 @@ class App
         $('ul#rb-grid li').each (i, el) ->
             el = $(el)
             if cat in el.attr('data-category').split(',')
-                el.removeClass('disabled')
+                el.removeClass('disabled').animate { 'opacity': 1 }, 500
             else
-                el.addClass('disabled')
+                el.addClass('disabled').animate { 'opacity': 0.1 }, 500
 
     initEvent: (i, el) =>
         item = $(el)
