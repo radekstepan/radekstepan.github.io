@@ -6,10 +6,10 @@
         "description": "",
         "email": "dev@radekstepan.com",
         "modified": "2013-02-17T17:24:10.313Z",
-        "_id": "5121266548ba4c9d53000001"
+        "_id": "51214d672f3d311e58000001"
     },
     {
-        "_id": "5121266548ba4c9d53000002",
+        "_id": "51214d672f3d311e58000002",
         "body": "The idea was to create a RESTful CMS API that would be edited using a client side app. On the backend, we use [flatiron](http://flatironjs.org/) and on the frontend [Chaplin](http://chaplinjs.org/) that itself wraps [Backbone](http://backbonejs.org/).\r\n\r\nOne defines a form associated with a page \"type\". This type is then modified in a presenter component and finally injected into an [eco](https://github.com/sstephenson/eco) template. The CMS then adds helper methods for accessing children, parent or sibling nodes in the presenter.\r\n\r\nAuthorization is done through [Mozilla Persona](http://www.mozilla.org/en-US/persona/) so one adds users with backend access priviledges simply by adding an email address.\r\n\r\nCurrently in use by University of Cambridge and this site.",
         "category-all": "on",
         "category-js": "on",
@@ -17,15 +17,16 @@
         "description": "A forms based node.js CMS ala SilverStripe",
         "github": "https://github.com/radekstepan/blad",
         "image": "",
-        "modified": "2013-02-17T20:50:02.010Z",
+        "modified": "2013-02-17T21:44:07.153Z",
         "public": true,
         "style": "terracotta",
         "title": "blað",
         "type": "ProjectDocument",
-        "url": "/project/blad"
+        "url": "/project/blad",
+        "width": "2"
     },
     {
-        "_id": "5121266548ba4c9d53000003",
+        "_id": "51214d672f3d311e58000003",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -34,15 +35,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/AccorDB",
         "image": "",
-        "modified": "2013-02-17T20:49:56.474Z",
+        "modified": "2013-02-17T21:46:22.623Z",
         "public": true,
         "style": "hopbush",
         "title": "AccorDB",
         "type": "ProjectDocument",
-        "url": "/projects/accordb"
+        "url": "/projects/accordb",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000004",
+        "_id": "51214d672f3d311e58000004",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -52,15 +54,16 @@
         "description": "",
         "github": "",
         "image": "",
-        "modified": "2013-02-17T20:51:08.480Z",
+        "modified": "2013-02-17T21:46:27.990Z",
         "public": true,
         "style": "sea",
         "title": "Betting",
         "type": "ProjectDocument",
-        "url": "/projects/betting"
+        "url": "/projects/betting",
+        "width": "2"
     },
     {
-        "_id": "5121266548ba4c9d53000005",
+        "_id": "51214d672f3d311e58000005",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -69,15 +72,16 @@
         "description": "",
         "github": "",
         "image": "",
-        "modified": "2013-02-17T21:05:40.513Z",
+        "modified": "2013-02-17T21:46:31.511Z",
         "public": true,
         "style": "golden",
         "title": "Budget View",
         "type": "ProjectDocument",
-        "url": "/projects/budget-view"
+        "url": "/projects/budget-view",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000006",
+        "_id": "51214d672f3d311e58000006",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -87,31 +91,33 @@
         "description": "",
         "github": "https://github.com/radekstepan/Clubhouse",
         "image": "",
-        "modified": "2013-02-17T20:52:33.808Z",
+        "modified": "2013-02-17T21:46:37.191Z",
         "public": true,
         "style": "golden",
         "title": "Clubhouse",
         "type": "ProjectDocument",
-        "url": "/projects/clubhouse"
+        "url": "/projects/clubhouse",
+        "width": "2"
     },
     {
-        "_id": "5121266548ba4c9d53000007",
+        "_id": "51214d672f3d311e58000007",
         "body": "",
         "category-all": "on",
         "category-php": "on",
-        "date": "2009-02-20T00:00:00.000Z",
+        "date": "2010-05-19T23:00:00.000Z",
         "description": "",
         "github": "https://github.com/radekstepan/Fari-Framework",
         "image": "",
-        "modified": "2013-02-17T21:05:53.240Z",
+        "modified": "2013-02-17T21:51:35.850Z",
         "public": true,
         "style": "golden",
         "title": "Fari MVP Framework",
         "type": "ProjectDocument",
-        "url": "/projects/fari-framework"
+        "url": "/projects/fari-framework",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000008",
+        "_id": "51214d672f3d311e58000008",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -120,15 +126,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/Knowledgebase",
         "image": "",
-        "modified": "2013-02-17T21:05:59.879Z",
+        "modified": "2013-02-17T21:46:45.870Z",
         "public": true,
         "style": "golden",
         "title": "Fari Knowledgebase",
         "type": "ProjectDocument",
-        "url": "/projects/fari-knowledgebase"
+        "url": "/projects/fari-knowledgebase",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000009",
+        "_id": "51214d672f3d311e58000009",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -138,15 +145,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/Fireside",
         "image": "",
-        "modified": "2013-02-17T21:06:19.608Z",
+        "modified": "2013-02-17T21:46:49.287Z",
         "public": true,
         "style": "golden",
         "title": "Fireside",
         "type": "ProjectDocument",
-        "url": "/projects/fireside"
+        "url": "/projects/fireside",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300000a",
+        "_id": "51214d672f3d311e5800000a",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -155,15 +163,16 @@
         "description": "Shared budget app for couples",
         "github": "https://github.com/radekstepan/FlaskBudget",
         "image": "",
-        "modified": "2013-02-17T20:55:03.534Z",
+        "modified": "2013-02-17T21:46:52.718Z",
         "public": true,
         "style": "sea",
         "title": "FlaskBudget",
         "type": "ProjectDocument",
-        "url": "/projects/flaskbudget"
+        "url": "/projects/flaskbudget",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300000b",
+        "_id": "51214d672f3d311e5800000b",
         "body": "",
         "category-all": "on",
         "category-js": "on",
@@ -171,15 +180,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/github-burndown-chart",
         "image": "",
-        "modified": "2013-02-17T20:56:10.478Z",
+        "modified": "2013-02-17T21:46:56.039Z",
         "public": true,
         "style": "hopbush",
         "title": "GitHub Burndown",
         "type": "ProjectDocument",
-        "url": "/projects/github-burndown"
+        "url": "/projects/github-burndown",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300000c",
+        "_id": "51214d672f3d311e5800000c",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -188,15 +198,16 @@
         "description": "Graphing widgets for InterMine platform",
         "github": "https://github.com/radekstepan/intermine-widget-client",
         "image": "",
-        "modified": "2013-02-17T20:56:39.334Z",
+        "modified": "2013-02-17T21:47:00.846Z",
         "public": true,
         "style": "hopbush",
         "title": "InterMine List Widgets",
         "type": "ProjectDocument",
-        "url": "/projects/intermine-list-widgets"
+        "url": "/projects/intermine-list-widgets",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300000d",
+        "_id": "51214d672f3d311e5800000d",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -205,15 +216,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/intermine-lists-client",
         "image": "",
-        "modified": "2013-02-17T20:57:07.022Z",
+        "modified": "2013-02-17T21:47:04.335Z",
         "public": true,
         "style": "hopbush",
         "title": "InterMine Lists",
         "type": "ProjectDocument",
-        "url": "/projects/intermine-lists"
+        "url": "/projects/intermine-lists",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300000e",
+        "_id": "51214d672f3d311e5800000e",
         "body": "",
         "category-all": "on",
         "category-js": "on",
@@ -222,15 +234,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/intermine-natural",
         "image": "",
-        "modified": "2013-02-17T20:57:38.963Z",
+        "modified": "2013-02-17T21:47:08.495Z",
         "public": true,
         "style": "curious",
         "title": "InterMine Natural",
         "type": "ProjectDocument",
-        "url": "/projects/intermine-natural"
+        "url": "/projects/intermine-natural",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300000f",
+        "_id": "51214d672f3d311e5800000f",
         "body": "",
         "category-all": "on",
         "category-js": "on",
@@ -238,15 +251,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/intermine-report-widgets",
         "image": "",
-        "modified": "2013-02-17T20:58:06.837Z",
+        "modified": "2013-02-17T21:47:14.343Z",
         "public": true,
         "style": "terracotta",
         "title": "InterMine Report Widgets",
         "type": "ProjectDocument",
-        "url": "/projects/intermine-report-widgets"
+        "url": "/projects/intermine-report-widgets",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000010",
+        "_id": "51214d672f3d311e58000010",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -255,15 +269,16 @@
         "description": "A prototype of a workflow based data mining solution",
         "github": "https://github.com/radekstepan/intermine-steps",
         "image": "",
-        "modified": "2013-02-17T20:58:14.335Z",
+        "modified": "2013-02-17T21:47:18.774Z",
         "public": true,
         "style": "hopbush",
         "title": "InterMine Steps",
         "type": "ProjectDocument",
-        "url": "/projects/intermine-steps"
+        "url": "/projects/intermine-steps",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000011",
+        "_id": "51214d672f3d311e58000011",
         "body": "A web service for a ledger based budgetting app using MongoDB as a data store.",
         "category-all": "on",
         "category-js": "on",
@@ -271,15 +286,16 @@
         "description": "Ledger based budget on top of NoSQL",
         "github": "https://github.com/radekstepan/kontu",
         "image": "",
-        "modified": "2013-02-17T20:58:36.204Z",
+        "modified": "2013-02-17T21:47:22.479Z",
         "public": true,
         "style": "terracotta",
         "title": "kontu",
         "type": "ProjectDocument",
-        "url": "/projects/kontu"
+        "url": "/projects/kontu",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000012",
+        "_id": "51214d672f3d311e58000012",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -289,15 +305,16 @@
         "description": "",
         "github": "",
         "image": "",
-        "modified": "2013-02-17T21:06:30.870Z",
+        "modified": "2013-02-17T21:47:25.983Z",
         "public": true,
         "style": "golden",
         "title": "Kreus CMS",
         "type": "ProjectDocument",
-        "url": "/projects/kreus"
+        "url": "/projects/kreus",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000013",
+        "_id": "51214d672f3d311e58000013",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -306,15 +323,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/mistok",
         "image": "",
-        "modified": "2013-02-17T20:59:37.501Z",
+        "modified": "2013-02-17T21:47:29.367Z",
         "public": true,
         "style": "hopbush",
         "title": "mistök",
         "type": "ProjectDocument",
-        "url": "/projects/mistok"
+        "url": "/projects/mistok",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000014",
+        "_id": "51214d672f3d311e58000014",
         "body": "One could set a number of goals to aim for and points for activities moving you closer to a goal.",
         "category-all": "on",
         "category-html": "on",
@@ -323,15 +341,16 @@
         "description": "Track progress towards goals",
         "github": "https://github.com/radekstepan/monGoals",
         "image": "",
-        "modified": "2013-02-17T21:00:00.181Z",
+        "modified": "2013-02-17T21:47:32.944Z",
         "public": true,
         "style": "sea",
         "title": "monGoals",
         "type": "ProjectDocument",
-        "url": "/projects/mongoals"
+        "url": "/projects/mongoals",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000015",
+        "_id": "51214d672f3d311e58000015",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -340,15 +359,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/mynd",
         "image": "",
-        "modified": "2013-02-17T21:00:20.132Z",
+        "modified": "2013-02-17T21:49:44.053Z",
         "public": true,
         "style": "hopbush",
         "title": "mynd",
         "type": "ProjectDocument",
-        "url": "/projects/mynd"
+        "url": "/projects/mynd",
+        "width": "2"
     },
     {
-        "_id": "5121266548ba4c9d53000016",
+        "_id": "51214d672f3d311e58000016",
         "body": "",
         "category-all": "on",
         "category-python": "on",
@@ -356,15 +376,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/octopy",
         "image": "",
-        "modified": "2013-02-17T21:00:44.579Z",
+        "modified": "2013-02-17T21:47:40.118Z",
         "public": true,
         "style": "sea",
         "title": "octopy",
         "type": "ProjectDocument",
-        "url": "/projects/octopy"
+        "url": "/projects/octopy",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000017",
+        "_id": "51214d672f3d311e58000017",
         "body": "",
         "category-all": "on",
         "category-js": "on",
@@ -372,15 +393,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/prefix-css-node",
         "image": "",
-        "modified": "2013-02-17T21:01:09.532Z",
+        "modified": "2013-02-17T21:47:43.552Z",
         "public": true,
         "style": "hopbush",
         "title": "Prefix CSS Selectors",
         "type": "ProjectDocument",
-        "url": "/projects/prefix-css-node"
+        "url": "/projects/prefix-css-node",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000018",
+        "_id": "51214d672f3d311e58000018",
         "body": "",
         "category-all": "on",
         "category-js": "on",
@@ -389,15 +411,16 @@
         "description": "",
         "github": "",
         "image": "",
-        "modified": "2013-02-17T21:01:16.316Z",
+        "modified": "2013-02-17T21:47:48.120Z",
         "public": true,
         "style": "curious",
         "title": "prolog.js",
         "type": "ProjectDocument",
-        "url": "/projects/prolog"
+        "url": "/projects/prolog",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d53000019",
+        "_id": "51214d672f3d311e58000019",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -406,15 +429,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/PumpedBlog",
         "image": "",
-        "modified": "2013-02-17T21:01:40.347Z",
+        "modified": "2013-02-17T21:47:52.431Z",
         "public": true,
         "style": "golden",
         "title": "PumpedBlog",
         "type": "ProjectDocument",
-        "url": "/projects/pumped-blog"
+        "url": "/projects/pumped-blog",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300001a",
+        "_id": "51214d672f3d311e5800001a",
         "body": "Checkers demoing the [Minimax](http://en.wikipedia.org/wiki/Minimax), [Negascout](http://en.wikipedia.org/wiki/Negascout), [Negamax](http://en.wikipedia.org/wiki/Negamax) and [Alpha Beta](http://www.ocf.berkeley.edu/~yosenl/extras/alphabeta/alphabeta.html) pruning algorithms.",
         "category-all": "on",
         "category-python": "on",
@@ -422,15 +446,16 @@
         "description": "Checkers with a number of AI algorithms",
         "github": "https://github.com/radekstepan/pyCheckers",
         "image": "",
-        "modified": "2013-02-17T21:06:45.064Z",
+        "modified": "2013-02-17T21:48:03.119Z",
         "public": true,
         "style": "sea",
         "title": "pyCheckers",
         "type": "ProjectDocument",
-        "url": "/projects/pycheckers"
+        "url": "/projects/pycheckers",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300001b",
+        "_id": "51214d672f3d311e5800001b",
         "body": "Powered by WebKit, this app provides an API to scrape content from websites that use JavaScript.",
         "category-all": "on",
         "category-python": "on",
@@ -438,15 +463,16 @@
         "description": "JavaScript powered websites scraper",
         "github": "https://github.com/radekstepan/skyScraper",
         "image": "",
-        "modified": "2013-02-17T21:02:56.907Z",
+        "modified": "2013-02-17T21:48:07.102Z",
         "public": true,
         "style": "sea",
         "title": "skyScraper",
         "type": "ProjectDocument",
-        "url": "/projects/skyscraper"
+        "url": "/projects/skyscraper",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300001c",
+        "_id": "51214d672f3d311e5800001c",
         "body": "",
         "category-all": "on",
         "category-php": "on",
@@ -454,15 +480,16 @@
         "description": "",
         "github": "https://github.com/radekstepan/soprano",
         "image": "",
-        "modified": "2013-02-17T21:03:16.803Z",
+        "modified": "2013-02-17T21:48:10.823Z",
         "public": true,
         "style": "golden",
         "title": "Soprano Framework",
         "type": "ProjectDocument",
-        "url": "/projects/soprano"
+        "url": "/projects/soprano",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300001d",
+        "_id": "51214d672f3d311e5800001d",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -471,15 +498,16 @@
         "description": "Collect statistics about your daily life",
         "github": "https://github.com/radekstepan/stada",
         "image": "",
-        "modified": "2013-02-17T21:04:05.811Z",
+        "modified": "2013-02-17T21:48:14.525Z",
         "public": true,
         "style": "hopbush",
         "title": "staða",
         "type": "ProjectDocument",
-        "url": "/projects/stada"
+        "url": "/projects/stada",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300001e",
+        "_id": "51214d672f3d311e5800001e",
         "body": "",
         "category-all": "on",
         "category-html": "on",
@@ -488,15 +516,16 @@
         "description": "Programmable spreadsheets in CoffeeScript",
         "github": "https://github.com/radekstepan/tableur",
         "image": "",
-        "modified": "2013-02-17T21:04:28.010Z",
+        "modified": "2013-02-17T21:48:18.022Z",
         "public": true,
         "style": "hopbush",
         "title": "tableur",
         "type": "ProjectDocument",
-        "url": "/projects/tableur"
+        "url": "/projects/tableur",
+        "width": "1"
     },
     {
-        "_id": "5121266548ba4c9d5300001f",
+        "_id": "51214d672f3d311e5800001f",
         "body": "",
         "category-all": "on",
         "category-js": "on",
@@ -504,15 +533,16 @@
         "description": "Node.js PaaS",
         "github": "https://github.com/radekstepan/ukraine",
         "image": "",
-        "modified": "2013-02-17T21:04:50.993Z",
+        "modified": "2013-02-17T21:48:22.901Z",
         "public": true,
         "style": "terracotta",
         "title": "ukraine",
         "type": "ProjectDocument",
-        "url": "/projects/ukraine"
+        "url": "/projects/ukraine",
+        "width": "2"
     },
     {
-        "_id": "5121266548ba4c9d53000020",
+        "_id": "51214d672f3d311e58000020",
         "body": "",
         "category-all": "on",
         "category-php": "on",
@@ -520,11 +550,12 @@
         "description": "",
         "github": "",
         "image": "",
-        "modified": "2013-02-17T21:05:13.434Z",
+        "modified": "2013-02-17T21:48:26.717Z",
         "public": true,
         "style": "golden",
         "title": "WebCMS",
         "type": "ProjectDocument",
-        "url": "/projects/webcms"
+        "url": "/projects/webcms",
+        "width": "1"
     }
 ]
