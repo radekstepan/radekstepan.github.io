@@ -604,6 +604,7 @@ a {
 }
 .rb-content p {
   line-height: 1.5em;
+  margin-top: 1em;
 }
 .rb-content a {
   color: #fff;
