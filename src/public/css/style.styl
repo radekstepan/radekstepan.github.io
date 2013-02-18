@@ -73,7 +73,9 @@ gradient(a, b)
 html
     height: 100%
     font-size: 100%
-    overflow-y: hidden
+
+    &:not(.detail)
+        overflow-y: hidden
 
 *,
 *:after,
@@ -81,8 +83,6 @@ html
     -webkit-box-sizing: border-box
     -moz-box-sizing: border-box
     box-sizing: border-box
-    padding: 0
-    margin: 0
 
 .clearfix
     *zoom: 1
@@ -207,15 +207,13 @@ a
         padding: 0.313em 0
 
 .rb-grid
-    list-style: none
     text-align: center
     margin: 0 auto
 
-    li
+    > li
         width: 24%
         height: 7em
         margin: 0 0.5% 1% 0.5%
-        background: #8CC7DF
         color: #fff
         display: block
         float: left
@@ -332,7 +330,7 @@ a
         font-weight: 700
         margin: 0 0 0.5em 0
 
-    p
+    p, ul, ol
         line-height: 1.5em
         margin-top: 1em
 

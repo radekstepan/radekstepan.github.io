@@ -309,6 +309,8 @@
 html {
   height: 100%;
   font-size: 100%;
+}
+html:not(.detail) {
   overflow-y: hidden;
 }
 *,
@@ -317,8 +319,6 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 .clearfix {
   *zoom: 1;
@@ -450,15 +450,13 @@ a {
   padding: 0.313em 0;
 }
 .rb-grid {
-  list-style: none;
   text-align: center;
   margin: 0 auto;
 }
-.rb-grid li {
+.rb-grid > li {
   width: 24%;
   height: 7em;
   margin: 0 0.5% 1% 0.5%;
-  background: #8cc7df;
   color: #fff;
   display: block;
   float: left;
@@ -466,21 +464,21 @@ a {
   cursor: pointer;
   position: relative;
 }
-.rb-grid li > a {
+.rb-grid > li > a {
   background: inherit;
   text-decoration: none;
   color: inherit;
 }
-.rb-grid li.disabled {
+.rb-grid > li.disabled {
   cursor: default;
 }
-.rb-grid li.span-2 {
+.rb-grid > li.span-2 {
   width: 49%;
 }
-.rb-grid li.span-4 {
+.rb-grid > li.span-4 {
   width: 76%;
 }
-.rb-grid li span.title {
+.rb-grid > li span.title {
   display: block;
   margin: 0 0 0.2em 0;
   font-size: 2em;
@@ -490,45 +488,45 @@ a {
   -moz-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
-.rb-grid li span.title.size-0 {
+.rb-grid > li span.title.size-0 {
   font-size: 2em;
 }
-.rb-grid li span.title.size-1 {
+.rb-grid > li span.title.size-1 {
   font-size: 1.8em;
 }
-.rb-grid li span.title.size-2 {
+.rb-grid > li span.title.size-2 {
   font-size: 1.6em;
 }
-.rb-grid li span.title.size-3 {
+.rb-grid > li span.title.size-3 {
   font-size: 1.4em;
 }
-.rb-grid li span.title.size-4 {
+.rb-grid > li span.title.size-4 {
   font-size: 1.2em;
 }
-.rb-grid li span.title.size-5 {
+.rb-grid > li span.title.size-5 {
   font-size: 1em;
 }
-.rb-grid li span.title.size-6 {
+.rb-grid > li span.title.size-6 {
   font-size: 0.7999999999999998em;
 }
-.rb-grid li span.title.size-7 {
+.rb-grid > li span.title.size-7 {
   font-size: 0.5999999999999999em;
 }
-.rb-grid li span.title.size-8 {
+.rb-grid > li span.title.size-8 {
   font-size: 0.3999999999999999em;
 }
-.rb-grid li span.title.size-9 {
+.rb-grid > li span.title.size-9 {
   font-size: 0.19999999999999996em;
 }
-.rb-grid li span.subtitle {
+.rb-grid > li span.subtitle {
   display: block;
   margin: 0;
   font-size: 0.8em;
   font-weight: 400;
   opacity: 0.8;
 }
-.rb-grid li[class^="icon-"]:before,
-.rb-grid li[class*=" icon-"]:before {
+.rb-grid > li[class^="icon-"]:before,
+.rb-grid > li[class*=" icon-"]:before {
   font-size: 10em;
   position: absolute;
   display: block;
@@ -541,7 +539,7 @@ a {
   text-align: right;
   pointer-events: none;
 }
-.rb-grid li:hover span.title {
+.rb-grid > li:hover span.title {
   opacity: 1;
 }
 .rb-overlay {
@@ -602,7 +600,9 @@ a {
   font-weight: 700;
   margin: 0 0 0.5em 0;
 }
-.rb-content p {
+.rb-content p,
+.rb-content ul,
+.rb-content ol {
   line-height: 1.5em;
   margin-top: 1em;
 }
