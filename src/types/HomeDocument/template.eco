@@ -37,7 +37,7 @@
             </div>
             
             <header id="header" class="notgrid clearfix">
-                <h1>Work of Radek Stepan <span>A full stack developer</span></h1>  
+                <h1>Work of Radek Stepan <span><%= @subtitle %></span></h1>  
                 <nav id="categories">
                     <a data-category="all" class="current">All</a>
                     <a data-category="js">JavaScript/Node.js</a>
