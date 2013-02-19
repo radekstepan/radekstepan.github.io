@@ -53,7 +53,7 @@
                     <ul id="rb-grid" class="rb-grid clearfix">
                         <% for p in @projects: %>
                             <li
-                                class="span-<%= p.width %> <%= p.style %> style variant-<%= Math.floor(Math.random() * 5) %>"
+                                class="entypo-<%= p.icon or 'none' %> span-<%= p.width %> <%= p.style %> style variant-<%= Math.floor(Math.random() * 5) %>"
                                 data-category="<%= p.categories.join(',') %>">
                                 <a class="link" href="<%= p.url %>">
                                     <span class="title size-<%= Math.floor(p.title.length/5) %>"><%= p.title %></span>

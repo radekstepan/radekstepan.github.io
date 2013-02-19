@@ -220,6 +220,32 @@ a
         padding: 1em
         cursor: pointer
         position: relative
+        overflow: hidden
+
+        &[class^="entypo-"]::before, &[class*=" entypo-"]::before
+            font-family: 'Entypo'
+            display: block
+            position: absolute
+            bottom: 0
+            right: 0
+            font-size: 13em
+            line-height: 0.3em
+            opacity: 0.15
+
+        &.entypo-heart-empty::before
+            content: '\2661'
+        &.entypo-graduation-cap::before
+            content: '\1F393'
+        &.entypo-upload-cloud::before
+            content: '\E711'
+        &.entypo-thumbs-down::before
+            content: '\1F44E'
+        &.entypo-briefcase::before
+            content: '\1F4BC'
+        &.entypo-bar-graph::before
+            content: '\1F4CA'
+        &.entypo-light-bulb::before
+            content: '\1F4A1'
 
         > a
             background: inherit

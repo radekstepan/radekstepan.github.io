@@ -14,7 +14,7 @@
     <input type="text" name="github" value="<%= @github %>" />
 </div>
 
-<div class="four columns">
+<div class="three columns">
     <label>Color style</label>
     <select name="style" style="margin:0 0 12px 0">
         <% for color in [ 'curious', 'turq', 'strikemaster', 'crail', 'terracotta', 'golden', 'york', 'patina', 'hopbush', 'sea', 'kimberly' ]: %>
@@ -23,7 +23,7 @@
     </select>
 </div>
 
-<div class="four columns">
+<div class="three columns">
     <label>Box width</label>
     <select name="width">
         <% for width in [ '1', '2', '4' ]: %>
@@ -32,7 +32,12 @@
     </select>
 </div>
 
-<div class="four columns">
+<div class="three columns">
+    <label>Entypo icon</label>
+    <input type="text" name="icon" value="<%= @icon %>" />
+</div>
+
+<div class="three columns">
     <label>Project background image</label>
     <input type="hidden" name="image" value="<%= @image %>" />
     <input type="file" data-custom="file" data-target="image" />

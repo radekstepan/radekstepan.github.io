@@ -463,6 +463,39 @@ a {
   padding: 1em;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
+}
+.rb-grid > li[class^="entypo-"]::before,
+.rb-grid > li[class*=" entypo-"]::before {
+  font-family: 'Entypo';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 13em;
+  line-height: 0.3em;
+  opacity: 0.15;
+}
+.rb-grid > li.entypo-heart-empty::before {
+  content: '\2661';
+}
+.rb-grid > li.entypo-graduation-cap::before {
+  content: '\1F393';
+}
+.rb-grid > li.entypo-upload-cloud::before {
+  content: '\E711';
+}
+.rb-grid > li.entypo-thumbs-down::before {
+  content: '\1F44E';
+}
+.rb-grid > li.entypo-briefcase::before {
+  content: '\1F4BC';
+}
+.rb-grid > li.entypo-bar-graph::before {
+  content: '\1F4CA';
+}
+.rb-grid > li.entypo-light-bulb::before {
+  content: '\1F4A1';
 }
 .rb-grid > li > a {
   background: inherit;
