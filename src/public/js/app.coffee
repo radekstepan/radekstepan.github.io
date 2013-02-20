@@ -18,10 +18,12 @@ getItemLayoutProp = (item) ->
     scrollT = $(window).scrollTop()
     scrollL = $(window).scrollLeft()
     itemOffset = item.offset()
-    left: itemOffset.left - scrollL
-    top: itemOffset.top - scrollT
-    width: item.outerWidth()
-    height: item.outerHeight()
+    {
+        'left': itemOffset.left - scrollL
+        'top': itemOffset.top - scrollT
+        'width': item.outerWidth()
+        'height': item.outerHeight()
+    }
 
 getWindowSize = ->
     $('body').css 'overflow-y', 'hidden'
@@ -215,7 +217,9 @@ class App
             overlay.find('a:not(.github)').attr('target', '_blank')
 
             # jScrollPane.
-            overlay.find('.scroll-pane').jScrollPane()
+            height = @winsize.height - 400
+            if height < 100 then height = 100
+            overlay.find('.scroll-pane').css('height', height).jScrollPane()
 
             # Attach on close handler.
             item.find('span.rb-close').click => @onClose item

@@ -10,10 +10,10 @@
     scrollL = $(window).scrollLeft();
     itemOffset = item.offset();
     return {
-      left: itemOffset.left - scrollL,
-      top: itemOffset.top - scrollT,
-      width: item.outerWidth(),
-      height: item.outerHeight()
+      'left': itemOffset.left - scrollL,
+      'top': itemOffset.top - scrollT,
+      'width': item.outerWidth(),
+      'height': item.outerHeight()
     };
   };
 
@@ -209,10 +209,14 @@
       overlay = item.find('.rb-overlay');
       url = item.data('url');
       return $.getJSON(url, function(data, textStatus, jqXHR) {
-        var html;
+        var height, html;
         overlay.html(html = window.JST.template(data));
         overlay.find('a:not(.github)').attr('target', '_blank');
-        overlay.find('.scroll-pane').jScrollPane();
+        height = _this.winsize.height - 400;
+        if (height < 100) {
+          height = 100;
+        }
+        overlay.find('.scroll-pane').css('height', height).jScrollPane();
         item.find('span.rb-close').click(function() {
           return _this.onClose(item);
         });
