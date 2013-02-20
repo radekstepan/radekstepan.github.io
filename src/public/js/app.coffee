@@ -217,7 +217,7 @@ class App
             overlay.find('a:not(.github)').attr('target', '_blank')
 
             # jScrollPane.
-            height = @winsize.height - 400
+            height = @winsize.height - 500
             if height < 100 then height = 100
             overlay.find('.scroll-pane').css('height', height).jScrollPane()
 

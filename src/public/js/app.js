@@ -212,7 +212,7 @@
         var height, html;
         overlay.html(html = window.JST.template(data));
         overlay.find('a:not(.github)').attr('target', '_blank');
-        height = _this.winsize.height - 400;
+        height = _this.winsize.height - 500;
         if (height < 100) {
           height = 100;
         }
