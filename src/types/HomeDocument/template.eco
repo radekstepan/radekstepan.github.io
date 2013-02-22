@@ -27,8 +27,9 @@
         <div class="container"> 
             <div id="top" class="notgrid clearfix">
                 <span class="right">
-                    <a href="https://github.com/radekstepan" target="_blank">GitHub</a>
-                    <a href="http://uk.linkedin.com/in/r4dek/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/radekstepan" class="github" target="_blank">GitHub</a>
+                    <a href="http://www.behance.net/r4d3k" class="behance" target="_blank">Behance</a>
+                    <a href="http://uk.linkedin.com/in/r4dek/" class="linkedin" target="_blank">LinkedIn</a>
                     <script>
                         document.write("<n uers='znvygb:<%= @email %>'><%= @email %></n>".replace(/[a-zA-Z]/g,
                             function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
