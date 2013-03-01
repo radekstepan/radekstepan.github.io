@@ -1,19 +1,3 @@
-# # Handle window resize (when looking at a detail).
-# $event = $.event
-# resizeTimeout = undefined
-# $special = $event.special.debouncedresize =
-#     setup: -> $(this).on 'resize', $special.handler
-#     teardown: -> $(this).off 'resize', $special.handler
-#     handler: (event, execAsap) ->
-#         context = this
-#         args = arguments
-#         dispatch = ->
-#             event.type = 'debouncedresize'
-#             $event.dispatch.apply context, args
-#         clearTimeout resizeTimeout if resizeTimeout
-#         (if execAsap then dispatch() else resizeTimeout = setTimeout(dispatch, $special.threshold))
-#     threshold: 50
-
 getItemLayoutProp = (item) ->
     scrollT = $(window).scrollTop()
     scrollL = $(window).scrollLeft()
@@ -69,17 +53,10 @@ class App
         # Init events.
         @items.each @initEvent
 
-        # # On window resize.
-        # $(window).on 'debouncedresize', =>
-        #     @winsize = getWindowSize()
-        #     if @current isnt -1
-        #         @items.eq(@current).children('div.rb-overlay')
-        #         .css('clip', "rect(0px #{@winsize.width}px #{@winsize.height}px 0px)")
-
         # Init category handling.
         $('nav#categories a').click @switchCategory
     
-    switchCategory: (e) ->
+    switchCategory: (e) =>
         # Reset all current categories.
         $('nav#categories a').removeClass('current')
 
@@ -89,7 +66,7 @@ class App
         # Get the new category.
         cat = t.attr('data-category')
 
-        $('ul#rb-grid li').each (i, el) ->
+        @items.each (i, el) ->
             el = $(el)
             if cat in el.attr('data-category').split(',')
                 el.removeClass('disabled').animate { 'opacity': 1 }, 500

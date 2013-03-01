@@ -44,6 +44,8 @@
 
       this.initEvent = __bind(this.initEvent, this);
 
+      this.switchCategory = __bind(this.switchCategory, this);
+
     }
 
     App.prototype.transitions = {
@@ -79,7 +81,7 @@
       $('nav#categories a').removeClass('current');
       (t = $(e.target)).addClass('current');
       cat = t.attr('data-category');
-      return $('ul#rb-grid li').each(function(i, el) {
+      return this.items.each(function(i, el) {
         el = $(el);
         if (__indexOf.call(el.attr('data-category').split(','), cat) >= 0) {
           return el.removeClass('disabled').animate({
