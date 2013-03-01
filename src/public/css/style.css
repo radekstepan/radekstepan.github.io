@@ -702,7 +702,7 @@ a {
   position: relative;
 }
 .jspContainer .jspVerticalBar .jspTrack .jspDrag {
-  background: #fff;
+  background: rgba(57,57,57,0.2);
   position: relative;
   box-shadow: inset -1px 0 8px rgba(0,0,0,0.05);
   top: 0;
@@ -715,6 +715,9 @@ a {
   background: #fff;
   float: left;
   height: 100%;
+}
+.rb-content .jspContainer .jspVerticalBar .jspTrack .jspDrag {
+  background: #fff;
 }
 @media screen and (max-width: 63.125em) {
   .rb-grid li,

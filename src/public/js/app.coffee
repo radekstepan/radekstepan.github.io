@@ -55,7 +55,7 @@ class App
 
         # Init category handling.
         $('nav#categories a').click @switchCategory
-    
+
     switchCategory: (e) =>
         # Reset all current categories.
         $('nav#categories a').removeClass('current')
