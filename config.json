@@ -1,8 +1,8 @@
 {
-    "mongodb": "mongodb://localhost:27017/radekstepan",
+    "mongodb": "use process.env.DATABASE_URL instead",
     "browserid": {
         "provider": "https://browserid.org/verify",
-        "salt":     "$a@RE$rapeda&26phucr",
+        "salt":     "use process.env.API_SALT instead",
         "users": [
             "radek.stepan@gmail.com"
         ]
