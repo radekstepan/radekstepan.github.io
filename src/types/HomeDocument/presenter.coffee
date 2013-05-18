@@ -10,17 +10,15 @@ class exports.HomeDocument extends blað.Type
 
         # Get all the public projects.
         @projects = []
-        for ch in @children(1) when ch.public?
-            # Make sure we match on type.
-            if ch.type is 'ProjectDocument'
-                # Remove clutter.
-                ( delete ch[key] for key in [ 'body', 'image', 'github' ] )
-                # Consolidate the categories.
-                ch.categories = []
-                for cat in [ 'all', 'js', 'html', 'prolog', 'python', 'php' ]
-                    if ch["category-#{cat}"] then ch.categories.push cat
-                # Push it.
-                @projects.push ch
+        for ch in @children(1) when ch.public and ch.type is 'ProjectDocument'
+            # Remove clutter.
+            ( delete ch[key] for key in [ 'body', 'image', 'github' ] )
+            # Consolidate the categories.
+            ch.categories = []
+            for cat in [ 'all', 'js', 'html', 'prolog', 'python', 'php' ]
+                if ch["category-#{cat}"] then ch.categories.push cat
+            # Push it.
+            @projects.push ch
 
         # Sort projects on the "date".
         @projects.sort (a, b) ->
