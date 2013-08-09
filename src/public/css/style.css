@@ -362,7 +362,7 @@ a {
 }
 .container > header {
   width: 90%;
-  max-width: 76em;
+  max-width: 72em;
   margin: 0 auto;
   padding: 1.875em;
 }
@@ -377,7 +377,8 @@ a {
 .container > header h1 span {
   display: block;
   font-size: 65%;
-  font-weight: 300;
+  font-weight: 400;
+  color: #666;
 }
 #top {
   line-height: 3.5;
@@ -433,6 +434,9 @@ a {
   font-size: 90%;
   line-height: 2;
   border-bottom: 4px solid transparent;
+}
+#categories a:last-child {
+  margin-right: 0;
 }
 #categories a:hover {
   color: #000;
@@ -677,7 +681,7 @@ a {
   left: 0 !important;
 }
 .jspContainer .jspPane > * {
-  padding-right: 23px;
+  padding: 0 23px;
 }
 .jspContainer:hover .jspVerticalBar {
   opacity: 1;

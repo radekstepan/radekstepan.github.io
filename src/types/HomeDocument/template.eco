@@ -43,7 +43,6 @@
                     <a data-category="all" class="current">All</a>
                     <a data-category="js">JavaScript/Node.js</a>
                     <a data-category="html">HTML/CSS</a>
-                    <a data-category="prolog">Prolog</a>
                     <a data-category="python">Python</a>
                     <a data-category="php">PHP</a>
                 </nav>
