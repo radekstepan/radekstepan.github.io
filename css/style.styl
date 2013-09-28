@@ -1,0 +1,120 @@
+@font-face
+    font-family: 'EntypoSocial'
+    font-style: normal
+    font-weight: 400
+    src: url('../fonts/EntypoSocial.woff') format('woff'),
+    url('../fonts/EntypoSocial.eot') format('eot'),
+    url('../fonts/EntypoSocial.ttf') format('truetype'),
+    url('../fonts/EntypoSocial.svg') format('svg')
+
+@font-face
+    font-family: 'new_ciclefina'
+    src: url('../fonts/New_Cicle_Fina-webfont.eot');
+    src: url('../fonts/New_Cicle_Fina-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/New_Cicle_Fina-webfont.woff') format('woff'),
+         url('../fonts/New_Cicle_Fina-webfont.ttf') format('truetype'),
+         url('../fonts/New_Cicle_Fina-webfont.svg#new_ciclefina') format('svg')
+    font-weight: normal
+    font-style: normal
+
+html
+    background-image: url('../img/bg/blue_bridge-50.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100%
+    font-family: "new_ciclefina"
+
+#center
+    position: fixed
+    top: 25%
+    width: 100%
+    text-align: center
+
+    div.wrap
+        display: inline-block
+
+        &:after
+            content: ""
+            display: block
+            clear: both
+
+    h1, h2, h3
+        display: block
+        font-size: 30px
+        padding: 10px 20px
+        float: left
+        margin: 0
+
+    h1, h3
+        background: #FFF
+
+    h2
+        background: #000
+        color: #FFF
+
+#links
+    background: #FFF
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+
+    &:before
+        background: url('../img/palette/stripe.png') repeat-x
+        height: 5px
+        width: 100%
+        display: block
+        content: ""
+
+    div.wrap
+        text-align: center
+        font-size: 0
+
+        ul
+            list-style-type: none
+            margin: 0
+            padding: 0
+            display: inline-block
+            font-size: 16px
+
+            &:after
+                clear: both
+                content: ""
+                display: block
+                height: 0
+
+            li
+                display: block
+                float: left
+                border-left: 1px solid #DDD
+
+                &:last-child
+                    border-right: 1px solid #DDD
+
+                a
+                    display: inline-block
+                    color: #AAA
+                    text-transform: uppercase
+                    text-decoration: none
+                    transition: color 0.3s ease-out 0s
+                    padding: 10px 20px
+
+                    &:hover
+                        color: #333
+
+                    &:before
+                        font-family: "EntypoSocial"
+                        display: inline-block
+                        font-size: 30px
+                        line-height: 19px
+                        vertical-align: bottom
+                        margin-right: 5px
+
+                    &.github:before
+                        content: "\F300"
+
+                    &.behance:before
+                        content: "\F34E"
+
+                    &.linkedin:before
+                        content: "\F318"
