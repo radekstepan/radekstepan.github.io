@@ -1,9 +1,0 @@
-<div class="six columns">
-    <label>Email address</label>
-    <input type="text" name="email" value="<%= @email %>" />
-</div>
-
-<div class="six columns">
-    <label>Subtitle</label>
-    <input type="text" name="subtitle" value="<%= @subtitle %>" />
-</div>
