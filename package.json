@@ -1,0 +1,9 @@
+{
+    "name": "radekstepan.github.io",
+    "version": "0.0.0",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-stylus": "~0.9.0"
+    },
+    "author": "Radek <dev@radekstepan.com>"
+}
