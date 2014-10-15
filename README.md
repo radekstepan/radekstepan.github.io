@@ -1,7 +1,6 @@
-#radekstepan-site
-
-Stylus with nib:
+#radekstepan.com
 
 ```bash
-stylus -u /usr/local/lib/node_modules/nib style.styl --watch
+$ npm install
+$ grunt
 ```
