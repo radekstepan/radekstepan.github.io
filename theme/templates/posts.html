@@ -1,0 +1,8 @@
+<ul id="posts">
+  {% for post in related || posts %}
+    <li>
+      <h2><a href="/{{ post.path }}" style="color:{{ post.color }}">{{ post.title }}</a></h2>
+      <div class="date">{{ post.date|date('Y-m-d') }}</div>
+    </li>
+  {% endfor %}
+</ul>

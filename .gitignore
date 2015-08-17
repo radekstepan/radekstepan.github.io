@@ -1,5 +1,3 @@
 node_modules/
 *.log
-.build_cache~
-build/*.map
-vendor/
+.DS_Store

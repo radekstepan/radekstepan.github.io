@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+      <title>Radek Stepan | Front-End Engineer</title>
+    
+    
+    <script type="text/javascript" src="/assets/vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/vendor/moment-2.8.4.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        window.fn = {};
+
+// Captions for post images.
+(fn.captions = function() {
+  $('#post .body p img')
+  .parent()
+  .contents()
+  .filter(function() {
+    return this.nodeType == 3; // Node.TEXT_NODE
+  })
+  .replaceWith(function() {
+    return $('<div/>', {
+      'class': 'caption',
+      'text': $.trim(this.data)
+    });
+  });
+})();
+
+// Time ago.
+(fn.ago = function() {
+  $('.date').text(function(i, val) {
+    return moment(val).fromNow();
+  });
+})();
+
+// Search.
+(function() {
+  var el = $('#search'),
+      visible = false;
+  
+  el.find('.close').on('click', function() {
+    el.removeClass('visible');
+    visible = false;
+  });
+
+  window.onkeypress = function(evt) {
+    var input = evt.target.tagName.match(/input/i);
+    switch(evt.which) {
+      // Q.
+      case 113:
+        if (!input) {
+          el.toggleClass('visible');
+          visible = !visible;
+          if (visible) {
+            setTimeout(function() {
+              el.find('input').focus();
+            }, 250);
+          }
+        }
+        break;
+      // Enter.
+      case 13:
+        if (input) {
+          var q = encodeURIComponent(
+            evt.target.value
+            .replace(/ +/g, '-')
+            .toLowerCase()
+          );
+          if (q.length) {
+            window.location.href = '/search.html?q=' + q;
+          }
+        }
+        break;
+    }
+  };
+})();
+      });
+    </script>
+    <link rel="stylesheet" href="/assets/style.css"/>
+  </head>
+  <body>
+    <div id="body">
+      <header id="header">
+        <div class="wrapper">
+          <a id="home" href="/">Radek Stepan</a>
+          <ul id="links">
+            <li><a href="https://github.com/radekstepan" class="icon-github" target="_blank">GitHub</a></li>
+            <li><a href="http://www.behance.net/radekstepan" class="icon-behance" target="_blank">Behance</a></li>
+            <li><a href="pdf/cv.pdf" class="icon-file-pdf">CV</a></li>
+            <li><a href="https://ca.linkedin.com/pub/radek-stepan/11/a54/66a" class="icon-linkedin" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </header>
+      
+      <main id="content" class="wrapper">
+        
+  
+  
+
+
+  <div id="hero">
+    <h1>A Front-End Engineer from Edmonton, AB with a specialization in React.js &amp; Flux architecture.</h1>
+		<p>I'd call my combination of conceptual and user interface skills <em>plug &amp; play</em>. You get code that others can easily plug into and products that end users can actually play with.</p>
+    <p>In the past I've helped teams build an e-commerce site, scientists visualize data sets or home buyers find their ideal neighbourhood.</p>
+    <p>Being opinionated about both the end user experience and the programmer codebase <em>experience</em>, I usually work closely with the product owner, the design team and dev team lead. In the end, working with decisive visionaries in an environment where creativity &amp; autonomy is encouraged is a place I'd be proud to be part of.</p>
+  </div>
+
+  <h2>Letters from the Front-End</h2>
+  <ul id="posts">
+  
+    <li>
+      <h2><a href="/notes/2015-08-09-toptal.html" style="color:#4d4034">Toptal</a></h2>
+      <div class="date">2015-08-09</div>
+    </li>
+  
+</ul>
+
+      </main>
+
+      <footer id="footer">
+        <div class="wrapper">
+          <h4>Contact Radek</h4>
+          <p>You can connect with me via LinkedIn or GitHub. The latter reveals my email address.</p>
+        </div>
+      </footer>
+
+      <div id="copy">
+        <div class="wrapper">
+          &copy; 2015 Radek Stepan. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+
+    <div id="search" style="opacity:0">
+      <div class="wrapper">
+        <div class="close"></div>
+        <p>Use the field below to search the site &hellip;</p>
+        <div class="input">
+          <input type="text" placeholder="Enter keyword...">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

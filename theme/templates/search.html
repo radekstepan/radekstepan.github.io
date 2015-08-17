@@ -1,0 +1,42 @@
+{% extends 'page.html' %}
+
+{% block content %}
+  {% parent %}
+  <div id="results">
+    <h1>Search Results</h1>
+  </div>
+
+  <script type="text/javascript" src="/assets/vendor/lunr-0.5.6.custom.min.js"></script>
+  <script type="text/javascript" src="/assets/vendor/swig-1.4.2.min.js"></script>
+  <script type="text/javascript" src="/assets/templates/posts.js"></script>
+  <script type="text/javascript">
+  (function() {
+    $.getJSON('/index.json', function(data) {
+      var idx = lunr.Index.load(data.search);
+
+      var el = $('#results');
+
+      // Get the search term.
+      var q = decodeURIComponent(location.search.split('&')[0].split('=')[1]).replace('-', ' ');
+
+      // Search.
+      var res = idx.search(q);
+      if (!res.length) {
+        el.append($('<p/>', { 'text': 'Sorry, nothing found' }));
+      } else {
+        // Convert results to posts.
+        el.hide().append(swig.run(tpl, {
+          'posts': $.map(res, function(match) {
+            var path = match.ref,
+                obj = data.docs[match.ref];
+            obj.path = path;
+            return obj;
+          })
+        })).slideDown();
+        // Update dates to time ago.
+        fn.ago();
+      }
+    });
+  })();
+  </script>
+{% endblock content %}

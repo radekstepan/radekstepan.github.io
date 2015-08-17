@@ -1,0 +1,15 @@
+{% extends 'page.html' %}
+
+{% block content %}
+  {% parent %}
+
+  <div id="hero">
+    <h1>A Front-End Engineer from Edmonton, AB with a specialization in React.js &amp; Flux architecture.</h1>
+		<p>I'd call my combination of conceptual and user interface skills <em>plug &amp; play</em>. You get code that others can easily plug into and products that end users can actually play with.</p>
+    <p>In the past I've helped teams build an e-commerce site, scientists visualize data sets or home buyers find their ideal neighbourhood.</p>
+    <p>Being opinionated about both the end user experience and the programmer codebase <em>experience</em>, I usually work closely with the product owner, the design team and dev team lead. In the end, working with decisive visionaries in an environment where creativity &amp; autonomy is encouraged is a place I'd be proud to be part of.</p>
+  </div>
+
+  <h2>Letters from the Front-End</h2>
+  {% include "posts.html" %}
+{% endblock content %}

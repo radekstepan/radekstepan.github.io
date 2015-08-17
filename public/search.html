@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+      <title>Radek Stepan | Front-End Engineer</title>
+    
+    
+    <script type="text/javascript" src="/assets/vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/vendor/moment-2.8.4.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        window.fn = {};
+
+// Captions for post images.
+(fn.captions = function() {
+  $('#post .body p img')
+  .parent()
+  .contents()
+  .filter(function() {
+    return this.nodeType == 3; // Node.TEXT_NODE
+  })
+  .replaceWith(function() {
+    return $('<div/>', {
+      'class': 'caption',
+      'text': $.trim(this.data)
+    });
+  });
+})();
+
+// Time ago.
+(fn.ago = function() {
+  $('.date').text(function(i, val) {
+    return moment(val).fromNow();
+  });
+})();
+
+// Search.
+(function() {
+  var el = $('#search'),
+      visible = false;
+  
+  el.find('.close').on('click', function() {
+    el.removeClass('visible');
+    visible = false;
+  });
+
+  window.onkeypress = function(evt) {
+    var input = evt.target.tagName.match(/input/i);
+    switch(evt.which) {
+      // Q.
+      case 113:
+        if (!input) {
+          el.toggleClass('visible');
+          visible = !visible;
+          if (visible) {
+            setTimeout(function() {
+              el.find('input').focus();
+            }, 250);
+          }
+        }
+        break;
+      // Enter.
+      case 13:
+        if (input) {
+          var q = encodeURIComponent(
+            evt.target.value
+            .replace(/ +/g, '-')
+            .toLowerCase()
+          );
+          if (q.length) {
+            window.location.href = '/search.html?q=' + q;
+          }
+        }
+        break;
+    }
+  };
+})();
+      });
+    </script>
+    <link rel="stylesheet" href="/assets/style.css"/>
+  </head>
+  <body>
+    <div id="body">
+      <header id="header">
+        <div class="wrapper">
+          <a id="home" href="/">Radek Stepan</a>
+          <ul id="links">
+            <li><a href="https://github.com/radekstepan" class="icon-github" target="_blank">GitHub</a></li>
+            <li><a href="http://www.behance.net/radekstepan" class="icon-behance" target="_blank">Behance</a></li>
+            <li><a href="pdf/cv.pdf" class="icon-file-pdf">CV</a></li>
+            <li><a href="https://ca.linkedin.com/pub/radek-stepan/11/a54/66a" class="icon-linkedin" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </header>
+      
+      <main id="content" class="wrapper">
+        
+  
+  
+
+  <div id="results">
+    <h1>Search Results</h1>
+  </div>
+
+  <script type="text/javascript" src="/assets/vendor/lunr-0.5.6.custom.min.js"></script>
+  <script type="text/javascript" src="/assets/vendor/swig-1.4.2.min.js"></script>
+  <script type="text/javascript" src="/assets/templates/posts.js"></script>
+  <script type="text/javascript">
+  (function() {
+    $.getJSON('/index.json', function(data) {
+      var idx = lunr.Index.load(data.search);
+
+      var el = $('#results');
+
+      // Get the search term.
+      var q = decodeURIComponent(location.search.split('&')[0].split('=')[1]).replace('-', ' ');
+
+      // Search.
+      var res = idx.search(q);
+      if (!res.length) {
+        el.append($('<p/>', { 'text': 'Sorry, nothing found' }));
+      } else {
+        // Convert results to posts.
+        el.hide().append(swig.run(tpl, {
+          'posts': $.map(res, function(match) {
+            var path = match.ref,
+                obj = data.docs[match.ref];
+            obj.path = path;
+            return obj;
+          })
+        })).slideDown();
+        // Update dates to time ago.
+        fn.ago();
+      }
+    });
+  })();
+  </script>
+
+      </main>
+
+      <footer id="footer">
+        <div class="wrapper">
+          <h4>Contact Radek</h4>
+          <p>You can connect with me via LinkedIn or GitHub. The latter reveals my email address.</p>
+        </div>
+      </footer>
+
+      <div id="copy">
+        <div class="wrapper">
+          &copy; 2015 Radek Stepan. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+
+    <div id="search" style="opacity:0">
+      <div class="wrapper">
+        <div class="close"></div>
+        <p>Use the field below to search the site &hellip;</p>
+        <div class="input">
+          <input type="text" placeholder="Enter keyword...">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

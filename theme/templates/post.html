@@ -1,0 +1,36 @@
+{% extends 'page.html' %}
+
+{% block content %}
+  <article>
+    <div id="post">
+      <header>
+        <h1>{{ title }}</h1>
+      </header>
+      
+      <section class="body">
+        {{ contents|raw }}
+      </section>
+      
+      <footer>
+        <div class="date">{{ date|date('Y-m-d') }}</div>
+      </footer>
+    </div>
+
+    <nav id="pagination">
+      {% if next %}
+        <a class="left" href="/{{ next.path }}">{{ next.title }}</a>
+      {% endif %}
+
+      {% if previous %}
+        <a class="right" href="/{{ previous.path }}">{{ previous.title }}</a>
+      {% endif %}
+    </nav>
+
+    {% if related %}
+      <section id="related">
+        <h2>Related articles</h2>
+        {% include "posts.html" %}
+      </section>
+    {% endif %}
+  <article>
+{% endblock %}
