@@ -6,7 +6,7 @@ _output += "<ul id=\"posts\">\n  ";
 (function () {
   var __l = (((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? ((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? _ctx.related : "") : ((typeof related !== "undefined" && related !== null) ? related : "")) !== null ? ((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? ((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? _ctx.related : "") : ((typeof related !== "undefined" && related !== null) ? related : "")) : "" )||(((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? ((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? _ctx.posts : "") : ((typeof posts !== "undefined" && posts !== null) ? posts : "")) !== null ? ((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? ((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? _ctx.posts : "") : ((typeof posts !== "undefined" && posts !== null) ? posts : "")) : "" ), __len = (_utils.isArray(__l) || typeof __l === "string") ? __l.length : _utils.keys(__l).length;
   if (!__l) { return; }
-    var _ctx__loopcache07634051649365574 = { loop: _ctx.loop, post: _ctx.post, __k: _ctx.__k };
+    var _ctx__loopcache031339902710169554 = { loop: _ctx.loop, post: _ctx.post, __k: _ctx.__k };
     _ctx.loop = { first: false, index: 1, index0: 0, revindex: __len, revindex0: __len - 1, length: __len, last: false };
   _utils.each(__l, function (post, __k) {
     _ctx.post = post;
@@ -25,10 +25,10 @@ _output += _filters["e"](_filters["date"]((((typeof _ctx.post !== "undefined" &&
 _output += "</div>\n    </li>\n  ";
     _ctx.loop.index += 1; _ctx.loop.index0 += 1; _ctx.loop.revindex -= 1; _ctx.loop.revindex0 -= 1;
   });
-  _ctx.loop = _ctx__loopcache07634051649365574.loop;
-  _ctx.post = _ctx__loopcache07634051649365574.post;
-  _ctx.__k = _ctx__loopcache07634051649365574.__k;
-  _ctx__loopcache07634051649365574 = undefined;
+  _ctx.loop = _ctx__loopcache031339902710169554.loop;
+  _ctx.post = _ctx__loopcache031339902710169554.post;
+  _ctx.__k = _ctx__loopcache031339902710169554.__k;
+  _ctx__loopcache031339902710169554 = undefined;
 })();
 _output += "\n</ul>";
 
