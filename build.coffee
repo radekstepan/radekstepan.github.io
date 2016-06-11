@@ -26,7 +26,7 @@ theme = (cb) ->
   async.waterfall [
     (cb) ->
       fs.readFile './theme/style/radekstepan.less', 'utf-8', cb
-    
+
     (data, cb) ->
       less.render data,
         'paths': [ './theme/style/' ]
@@ -71,15 +71,15 @@ content = (cb) ->
           return yes unless isNaN word
           # Remove all stopwords.
           word in stopwords
-        
+
         text
 
     related(opts).apply null, arguments
-  
+
   m.use ->
     console.log 'Markdown'
     (do markdown).apply null, arguments
-  
+
   m.use ->
     console.log 'Collections'
     collections({
@@ -104,12 +104,12 @@ content = (cb) ->
 
     # -------------------
     console.log 'URLs'
-    
+
     ( obj.path = file for file, obj of files )
 
     # -------------------
     console.log 'Search index'
-    
+
     search = lunr ->
       @field 'title', { 'boost': 10 }
       @field 'contents'
@@ -120,14 +120,14 @@ content = (cb) ->
     mm = new minimatch.Minimatch 'notes/**/*.html'
     for path, doc of files when mm.match path
       { title, date, color } = doc # need these in search results
-      
+
       idx[path] = { title, date, color }
-      
+
       obj = { path } # search index
-      
+
       for k, v of doc when k in [ 'title', 'contents' ]
         obj[k] = String v
-      
+
       search.add obj
 
     # The indexes.
@@ -139,7 +139,7 @@ content = (cb) ->
 
     # -------------------
     console.log 'Precompile browser templates'
-    
+
     a = './theme/templates/posts.html'
     sh.exec "swig compile #{a}", { 'silent': yes }, (code, out) ->
       return done out if code
