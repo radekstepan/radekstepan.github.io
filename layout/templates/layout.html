@@ -10,13 +10,9 @@
       <title>Radek Stepan | Front-End Engineer</title>
     {% endif %}
 
-    <script type="text/javascript" src="/assets/vendor/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/assets/vendor/moment-2.8.4.min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        {% include "functions.js" %}
-      });
-    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    {% include "functions.html" %}
     <link rel="stylesheet" href="/assets/style.css"/>
   </head>
   <body>
@@ -34,22 +30,22 @@
       </header>
 
       <main id="content" class="wrapper">
-        {% block content %}{% endblock content %}
+        {% block content %}{% endblock %}
       </main>
 
       <footer id="footer">
         <div class="wrapper">
           <h4>Contact Radek</h4>
-          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub; the latter reveals my email address.</p>
+          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub;
+            the latter reveals my email address.</p>
         </div>
       </footer>
 
       <div id="copy">
         <div class="wrapper">
-          &copy; 2016 Radek Stepan. All rights reserved.
+          &copy; 2017 Radek Stepan. All rights reserved.
         </div>
       </div>
-
     </div>
 
     <div id="search" style="opacity:0">

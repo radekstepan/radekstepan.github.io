@@ -1,3 +1,3 @@
 ---
-template: search.html
+layout: search.html
 ---

@@ -8,40 +8,39 @@
       <title>Radek Stepan | Front-End Engineer</title>
     
 
-    <script type="text/javascript" src="/assets/vendor/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/assets/vendor/moment-2.8.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript">
-      $(function() {
-        window.fn = {};
+$(function() {
+  window.fn = {};
 
-// Captions for post images.
-(fn.captions = function() {
-  $('#post .body p img')
-  .parent()
-  .contents()
-  .filter(function() {
-    return this.nodeType == 3; // Node.TEXT_NODE
-  })
-  .replaceWith(function() {
-    return $('<div/>', {
-      'class': 'caption',
-      'text': $.trim(this.data)
+  // Captions for post images.
+  fn.captions = function() {
+    $('#post .body p img')
+    .parent()
+    .contents()
+    .filter(function() {
+      return this.nodeType == 3; // Node.TEXT_NODE
+    })
+    .replaceWith(function() {
+      return $('<div/>', {
+        'class': 'caption',
+        'text': $.trim(this.data)
+      });
     });
-  });
-})();
+  };
 
-// Time ago.
-(fn.ago = function() {
-  $('.date').text(function(i, val) {
-    return moment(val).fromNow();
-  });
-})();
+  // Time ago.
+  (fn.ago = function() {
+    $('.date').text(function(i, val) {
+      return moment(val).fromNow();
+    });
+  })();
 
-// Search.
-(function() {
+  // Search.
   var el = $('#search'),
       visible = false;
-  
+
   el.find('.close').on('click', function() {
     el.removeClass('visible');
     visible = false;
@@ -77,9 +76,9 @@
         break;
     }
   };
-})();
-      });
-    </script>
+});
+</script>
+
     <link rel="stylesheet" href="/assets/style.css"/>
   </head>
   <body>
@@ -98,18 +97,15 @@
 
       <main id="content" class="wrapper">
         
-  
-  
-
   <div id="results">
     <h1>Search Results</h1>
   </div>
 
-  <script type="text/javascript" src="/assets/vendor/lunr-0.5.6.custom.min.js"></script>
-  <script type="text/javascript" src="/assets/vendor/swig-1.4.2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.2/lunr.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.1/nunjucks.min.js"></script>
   <script type="text/javascript" src="/assets/templates/posts.js"></script>
   <script type="text/javascript">
-  (function() {
+  $(function() {
     $.getJSON('/index.json', function(data) {
       var idx = lunr.Index.load(data.search);
 
@@ -124,8 +120,8 @@
         el.append($('<p/>', { 'text': 'Sorry, nothing found' }));
       } else {
         // Convert results to posts.
-        el.hide().append(swig.run(tpl, {
-          'posts': $.map(res, function(match) {
+        el.hide().append(nunjucks.render('posts.html', {
+          posts: $.map(res, function(match) {
             var path = match.ref,
                 obj = data.docs[match.ref];
             obj.path = path;
@@ -136,7 +132,7 @@
         fn.ago();
       }
     });
-  })();
+  });
   </script>
 
       </main>
@@ -144,16 +140,16 @@
       <footer id="footer">
         <div class="wrapper">
           <h4>Contact Radek</h4>
-          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub; the latter reveals my email address.</p>
+          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub;
+            the latter reveals my email address.</p>
         </div>
       </footer>
 
       <div id="copy">
         <div class="wrapper">
-          &copy; 2016 Radek Stepan. All rights reserved.
+          &copy; 2017 Radek Stepan. All rights reserved.
         </div>
       </div>
-
     </div>
 
     <div id="search" style="opacity:0">

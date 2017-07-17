@@ -5,43 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-      <title>Learn &amp; Certify : Radek Stepan</title>
+      <title>Learn & Certify : Radek Stepan</title>
     
 
-    <script type="text/javascript" src="/assets/vendor/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/assets/vendor/moment-2.8.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript">
-      $(function() {
-        window.fn = {};
+$(function() {
+  window.fn = {};
 
-// Captions for post images.
-(fn.captions = function() {
-  $('#post .body p img')
-  .parent()
-  .contents()
-  .filter(function() {
-    return this.nodeType == 3; // Node.TEXT_NODE
-  })
-  .replaceWith(function() {
-    return $('<div/>', {
-      'class': 'caption',
-      'text': $.trim(this.data)
+  // Captions for post images.
+  fn.captions = function() {
+    $('#post .body p img')
+    .parent()
+    .contents()
+    .filter(function() {
+      return this.nodeType == 3; // Node.TEXT_NODE
+    })
+    .replaceWith(function() {
+      return $('<div/>', {
+        'class': 'caption',
+        'text': $.trim(this.data)
+      });
     });
-  });
-})();
+  };
 
-// Time ago.
-(fn.ago = function() {
-  $('.date').text(function(i, val) {
-    return moment(val).fromNow();
-  });
-})();
+  // Time ago.
+  (fn.ago = function() {
+    $('.date').text(function(i, val) {
+      return moment(val).fromNow();
+    });
+  })();
 
-// Search.
-(function() {
+  // Search.
   var el = $('#search'),
       visible = false;
-  
+
   el.find('.close').on('click', function() {
     el.removeClass('visible');
     visible = false;
@@ -77,9 +76,9 @@
         break;
     }
   };
-})();
-      });
-    </script>
+});
+</script>
+
     <link rel="stylesheet" href="/assets/style.css"/>
   </head>
   <body>
@@ -101,9 +100,9 @@
   <article>
     <div id="post">
       <header>
-        <h1>Learn &amp; Certify</h1>
+        <h1>Learn & Certify</h1>
       </header>
-      
+
       <section class="body">
         <p>Learn &amp; certify is a two-step process that describes how we progress through our careers. We first need to learn a skill and then convince others of our abilities. Let&#39;s discuss the ways one would actually accomplish these steps as a programmer.</p>
 <p>Traditionally, one may go to a university. It provides us with learning and towards the end a certification. But, in many countries the cost of attending a university is prohibitive. Many also attack universities for not teaching up to date skills, not understanding the difference between software engineering &amp; programming. Either way, a programmer who intends to stay relevant specializes herself in different languages, approaches, soft skills etc. beyond the 3 or so years spent getting a degree which mostly only jump-starts her career.</p>
@@ -117,9 +116,9 @@
 <p>Pretty fun if you think about it. Set the acceptance criteria high, get enough programmers and satisfied companies in and you&#39;ve got yourself a business. Where&#39;s the catch? Well, just like it says on the tin, this site is for programmers only. From Glassdoor reviews we find out that the interview process entails undertaking a Codility algorithm test in addition to a live coding session. This works well if you are a pure programmer. For people of softer-skills persuasion, I hear <a href="http://dezigner.io/">Dezigner</a> is opening its doors soon.</p>
 
       </section>
-      
+
       <footer>
-        <div class="date">2015-08-09</div>
+        <div class="date">2015-08-09T00:00:00.000Z</div>
       </footer>
     </div>
 
@@ -137,16 +136,16 @@
       <footer id="footer">
         <div class="wrapper">
           <h4>Contact Radek</h4>
-          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub; the latter reveals my email address.</p>
+          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub;
+            the latter reveals my email address.</p>
         </div>
       </footer>
 
       <div id="copy">
         <div class="wrapper">
-          &copy; 2016 Radek Stepan. All rights reserved.
+          &copy; 2017 Radek Stepan. All rights reserved.
         </div>
       </div>
-
     </div>
 
     <div id="search" style="opacity:0">

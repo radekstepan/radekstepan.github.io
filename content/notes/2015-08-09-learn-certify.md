@@ -1,7 +1,7 @@
 ---
 title: Learn & Certify
 date: 2015-08-09
-template: post.html
+layout: post.html
 collection: posts
 ---
 Learn & certify is a two-step process that describes how we progress through our careers. We first need to learn a skill and then convince others of our abilities. Let's discuss the ways one would actually accomplish these steps as a programmer.

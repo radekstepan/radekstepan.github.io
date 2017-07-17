@@ -1,16 +1,15 @@
 {% extends 'page.html' %}
 
 {% block content %}
-  {% parent %}
   <div id="results">
     <h1>Search Results</h1>
   </div>
 
-  <script type="text/javascript" src="/assets/vendor/lunr-0.5.6.custom.min.js"></script>
-  <script type="text/javascript" src="/assets/vendor/swig-1.4.2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.2/lunr.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.1/nunjucks.min.js"></script>
   <script type="text/javascript" src="/assets/templates/posts.js"></script>
   <script type="text/javascript">
-  (function() {
+  $(function() {
     $.getJSON('/index.json', function(data) {
       var idx = lunr.Index.load(data.search);
 
@@ -25,8 +24,8 @@
         el.append($('<p/>', { 'text': 'Sorry, nothing found' }));
       } else {
         // Convert results to posts.
-        el.hide().append(swig.run(tpl, {
-          'posts': $.map(res, function(match) {
+        el.hide().append(nunjucks.render('posts.html', {
+          posts: $.map(res, function(match) {
             var path = match.ref,
                 obj = data.docs[match.ref];
             obj.path = path;
@@ -37,6 +36,6 @@
         fn.ago();
       }
     });
-  })();
+  });
   </script>
-{% endblock content %}
+{% endblock %}

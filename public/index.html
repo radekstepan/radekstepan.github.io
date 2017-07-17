@@ -8,40 +8,39 @@
       <title>Radek Stepan | Front-End Engineer</title>
     
 
-    <script type="text/javascript" src="/assets/vendor/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/assets/vendor/moment-2.8.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript">
-      $(function() {
-        window.fn = {};
+$(function() {
+  window.fn = {};
 
-// Captions for post images.
-(fn.captions = function() {
-  $('#post .body p img')
-  .parent()
-  .contents()
-  .filter(function() {
-    return this.nodeType == 3; // Node.TEXT_NODE
-  })
-  .replaceWith(function() {
-    return $('<div/>', {
-      'class': 'caption',
-      'text': $.trim(this.data)
+  // Captions for post images.
+  fn.captions = function() {
+    $('#post .body p img')
+    .parent()
+    .contents()
+    .filter(function() {
+      return this.nodeType == 3; // Node.TEXT_NODE
+    })
+    .replaceWith(function() {
+      return $('<div/>', {
+        'class': 'caption',
+        'text': $.trim(this.data)
+      });
     });
-  });
-})();
+  };
 
-// Time ago.
-(fn.ago = function() {
-  $('.date').text(function(i, val) {
-    return moment(val).fromNow();
-  });
-})();
+  // Time ago.
+  (fn.ago = function() {
+    $('.date').text(function(i, val) {
+      return moment(val).fromNow();
+    });
+  })();
 
-// Search.
-(function() {
+  // Search.
   var el = $('#search'),
       visible = false;
-  
+
   el.find('.close').on('click', function() {
     el.removeClass('visible');
     visible = false;
@@ -77,9 +76,9 @@
         break;
     }
   };
-})();
-      });
-    </script>
+});
+</script>
+
     <link rel="stylesheet" href="/assets/style.css"/>
   </head>
   <body>
@@ -98,45 +97,42 @@
 
       <main id="content" class="wrapper">
         
-  
-  
-
-
   <div id="hero">
-    <h1>A Front-End Engineer with a specialization in React.js &amp; Flux architecture.</h1>
-		<p>I'd call my combination of conceptual and user interface skills <em>plug &amp; play</em>. You get code that developers can easily plug into and products that end users can actually play with.</p>
-    <p>In the past I've helped teams build an e-commerce site, home buyers find their ideal neighbourhood, scientists visualize their data sets or setup a custom PaaS on a machine aptly called "the ukraine"&hellip;</p>
-    <p>Being pragmatic about both the end user experience and the programmer codebase <em>experience</em>, I usually work closely with the product owner, the design team and dev team lead on the system at hand. A place that I'd be proud to be a part of? Any environment with decisive visionaries where creativity &amp; autonomy is encouraged.</p>
-    <p>Radek</p>
+    <h1 id="a-front-end-engineer-with-a-specialization-in-react-js-flux-architecture-">A Front-End Engineer with a specialization in React.js &amp; Flux architecture.</h1>
+<p>I&#39;d call my combination of conceptual and user interface skills <em>plug &amp; play</em>. You get code that developers can easily plug into and products that end users can actually play with.</p>
+<p>In the past I&#39;ve helped teams build an e-commerce site, home buyers find their ideal neighbourhood, scientists visualize their data sets or setup a custom PaaS on a machine aptly called &quot;the ukraine&quot;...</p>
+<p>Being pragmatic about both the end user experience and the programmer codebase <em>experience</em>, I usually work closely with the product owner, the design team and dev team lead on the system at hand. A place that I&#39;d be proud to be a part of? Any environment with decisive visionaries where creativity &amp; autonomy is encouraged.</p>
+<p>Radek</p>
+
   </div>
 
-  <!--
-  <h2>Letters from the Front-End</h2>
-  <ul id="posts">
+  <h2>Letters from the front end</h2>
+  <!-- NOTE is precompiled as well, custom filters won't work -->
+<ul id="posts">
   
     <li>
-      <h2><a href="/notes/2015-08-09-learn-certify.html" style="color:#4d4034">Learn &amp; Certify</a></h2>
-      <div class="date">2015-08-09</div>
+      <h2><a href="/notes/2015-08-09-learn-certify.html" style="color:rgb(77, 64, 52)">Learn & Certify</a></h2>
+      <div class="date">2015-08-09T00:00:00.000Z</div>
     </li>
   
 </ul>
-  -->
+
 
       </main>
 
       <footer id="footer">
         <div class="wrapper">
           <h4>Contact Radek</h4>
-          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub; the latter reveals my email address.</p>
+          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub;
+            the latter reveals my email address.</p>
         </div>
       </footer>
 
       <div id="copy">
         <div class="wrapper">
-          &copy; 2016 Radek Stepan. All rights reserved.
+          &copy; 2017 Radek Stepan. All rights reserved.
         </div>
       </div>
-
     </div>
 
     <div id="search" style="opacity:0">

@@ -1,37 +1,468 @@
-var tpl = function (_swig,_ctx,_filters,_utils,_fn
-/**/) {
-  var _ext = _swig.extensions,
-    _output = "";
-_output += "<ul id=\"posts\">\n  ";
-(function () {
-  var __l = (((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? ((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? _ctx.related : "") : ((typeof related !== "undefined" && related !== null) ? related : "")) !== null ? ((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? ((typeof _ctx.related !== "undefined" && _ctx.related !== null) ? _ctx.related : "") : ((typeof related !== "undefined" && related !== null) ? related : "")) : "" )||(((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? ((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? _ctx.posts : "") : ((typeof posts !== "undefined" && posts !== null) ? posts : "")) !== null ? ((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? ((typeof _ctx.posts !== "undefined" && _ctx.posts !== null) ? _ctx.posts : "") : ((typeof posts !== "undefined" && posts !== null) ? posts : "")) : "" ), __len = (_utils.isArray(__l) || typeof __l === "string") ? __l.length : _utils.keys(__l).length;
-  if (!__l) { return; }
-    var _ctx__loopcache07834768814500421 = { loop: _ctx.loop, post: _ctx.post, __k: _ctx.__k };
-    _ctx.loop = { first: false, index: 1, index0: 0, revindex: __len, revindex0: __len - 1, length: __len, last: false };
-  _utils.each(__l, function (post, __k) {
-    _ctx.post = post;
-    _ctx.__k = __k;
-    _ctx.loop.key = __k;
-    _ctx.loop.first = (_ctx.loop.index0 === 0);
-    _ctx.loop.last = (_ctx.loop.revindex0 === 0);
-    _output += "\n    <li>\n      <h2><a href=\"/";
-_output += _filters["e"]((((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.path !== undefined && _ctx.post.path !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.path !== undefined && _ctx.post.path !== null) ? _ctx.post.path : "") : ((typeof post !== "undefined" && post !== null && post.path !== undefined && post.path !== null) ? post.path : "")) !== null ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.path !== undefined && _ctx.post.path !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.path !== undefined && _ctx.post.path !== null) ? _ctx.post.path : "") : ((typeof post !== "undefined" && post !== null && post.path !== undefined && post.path !== null) ? post.path : "")) : "" ));
-_output += "\" style=\"color:";
-_output += _filters["e"]((((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.color !== undefined && _ctx.post.color !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.color !== undefined && _ctx.post.color !== null) ? _ctx.post.color : "") : ((typeof post !== "undefined" && post !== null && post.color !== undefined && post.color !== null) ? post.color : "")) !== null ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.color !== undefined && _ctx.post.color !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.color !== undefined && _ctx.post.color !== null) ? _ctx.post.color : "") : ((typeof post !== "undefined" && post !== null && post.color !== undefined && post.color !== null) ? post.color : "")) : "" ));
-_output += "\">";
-_output += _filters["e"]((((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.title !== undefined && _ctx.post.title !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.title !== undefined && _ctx.post.title !== null) ? _ctx.post.title : "") : ((typeof post !== "undefined" && post !== null && post.title !== undefined && post.title !== null) ? post.title : "")) !== null ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.title !== undefined && _ctx.post.title !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.title !== undefined && _ctx.post.title !== null) ? _ctx.post.title : "") : ((typeof post !== "undefined" && post !== null && post.title !== undefined && post.title !== null) ? post.title : "")) : "" ));
-_output += "</a></h2>\n      <div class=\"date\">";
-_output += _filters["e"](_filters["date"]((((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.date !== undefined && _ctx.post.date !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.date !== undefined && _ctx.post.date !== null) ? _ctx.post.date : "") : ((typeof post !== "undefined" && post !== null && post.date !== undefined && post.date !== null) ? post.date : "")) !== null ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.date !== undefined && _ctx.post.date !== null) ? ((typeof _ctx.post !== "undefined" && _ctx.post !== null && _ctx.post.date !== undefined && _ctx.post.date !== null) ? _ctx.post.date : "") : ((typeof post !== "undefined" && post !== null && post.date !== undefined && post.date !== null) ? post.date : "")) : "" ), 'Y-m-d'));
-_output += "</div>\n    </li>\n  ";
-    _ctx.loop.index += 1; _ctx.loop.index0 += 1; _ctx.loop.revindex -= 1; _ctx.loop.revindex0 -= 1;
-  });
-  _ctx.loop = _ctx__loopcache07834768814500421.loop;
-  _ctx.post = _ctx__loopcache07834768814500421.post;
-  _ctx.__k = _ctx__loopcache07834768814500421.__k;
-  _ctx__loopcache07834768814500421 = undefined;
-})();
-_output += "\n</ul>";
-
-  return _output;
-
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["templates/posts"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(env.getFilter("date").call(context, runtime.memberLookup((t_4),"date"),"YYYY-MM-DDTHH:mm:ss.SSS[Z]"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
 };
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["templates/posts"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(env.getFilter("date").call(context, runtime.memberLookup((t_4),"date"),"YYYY-MM-DDTHH:mm:ss.SSS[Z]"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["templates/posts"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(env.getFilter("date").call(context, runtime.memberLookup((t_4),"date"),"YYYY-MM-DDTHH:mm:ss.SSS[Z]"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["posts.html"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(env.getFilter("date").call(context, runtime.memberLookup((t_4),"date"),"YYYY-MM-DDTHH:mm:ss.SSS[Z]"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["posts.html"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"date"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["posts.html"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<!-- NOTE is precompiled as well, custom filters won't work -->\n<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"date"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["posts.html"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<!-- NOTE is precompiled as well, custom filters won't work -->\n<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"date"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["posts.html"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<!-- NOTE is precompiled as well, custom filters won't work -->\n<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"date"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["posts.html"] = (function() {
+function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+var parentTemplate = null;
+output += "<!-- NOTE is precompiled as well, custom filters won't work -->\n<ul id=\"posts\">\n  ";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "posts");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("post", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n    <li>\n      <h2><a href=\"/";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"path"), env.opts.autoescape);
+output += "\" style=\"color:";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"color"), env.opts.autoescape);
+output += "\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"title"), env.opts.autoescape);
+output += "</a></h2>\n      <div class=\"date\">";
+output += runtime.suppressValue(runtime.memberLookup((t_4),"date"), env.opts.autoescape);
+output += "</div>\n    </li>\n  ";
+;
+}
+}
+frame = frame.pop();
+output += "\n</ul>\n";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+
+})();
+})();
+
