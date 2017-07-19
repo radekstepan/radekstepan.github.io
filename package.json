@@ -28,6 +28,7 @@
   },
   "scripts": {
     "build": "DEBUG=metalsmith:* node build.js",
-    "start": "./node_modules/.bin/superstatic docs --port 8090"
+    "start": "./node_modules/.bin/superstatic docs --port 8090",
+    "publish": "git subtree push --prefix=docs origin master"
   }
 }
