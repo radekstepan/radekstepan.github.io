@@ -17,12 +17,12 @@
     </div>
 
     <nav id="pagination">
-      {% if next %}
-        <a class="left" href="/{{ next.path }}">{{ next.title }}</a>
-      {% endif %}
-
       {% if previous %}
         <a class="right" href="/{{ previous.path }}">{{ previous.title }}</a>
+      {% endif %}
+      
+      {% if next %}
+        <a class="left" href="/{{ next.path }}">{{ next.title }}</a>
       {% endif %}
     </nav>
 

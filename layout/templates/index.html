@@ -5,8 +5,8 @@
     {{ contents }}
   </div>
 
-  <!--
-  <h2>Letters from the front end</h2>
-  {% include "posts.html" %}
-  -->
+  {% if posts.length %}
+    <h2>Select <a href="https://github.com/radekstepan" class="icon-github" target="_blank">GitHub</a> Projects</h2>
+    {% include "posts.html" %}
+  {% endif %}
 {% endblock %}

@@ -11,7 +11,7 @@ const lunr = require('lunr');
 const minimatch = require('minimatch');
 const string = require('string');
 const nunjucks = require('nunjucks');
-const sh = Promise.promisifyAll(require('shelljs'));
+const sh = require('shelljs');
 
 const Metalsmith = require('metalsmith');
 const debug = require('metalsmith-debug');
@@ -31,7 +31,7 @@ async function style() {
     paths: ['./layout/style/'],
     compress: true
   });
-  return fs.writeFileAsync('./public/assets/style.css', css);
+  return fs.writeFileAsync('./docs/assets/style.css', css);
 };
 
 async function content() {
@@ -41,7 +41,7 @@ async function content() {
   return new Promise((resolve, reject) => {
     Metalsmith(__dirname)
     .source('./content')
-    .destination('./public')
+    .destination('./docs')
     .clean(false)
 
     .use(debug())
@@ -72,6 +72,9 @@ async function content() {
     .use((files, metalsmith, done) => {
       // Colorize.
       const {posts} = metalsmith.metadata();
+
+      if (!posts.length) return done();
+
       const color = d3.scaleLinear()
         .domain([0, posts.length - 1])
         .interpolate(d3.interpolateRgb)
@@ -83,10 +86,10 @@ async function content() {
         post.date = moment(post.date).toISOString();
       });
 
-      // URLs
+      // URLs.
       Object.keys(files).forEach(path => files[path].path = path);
 
-      // Search index
+      // Search index.
       const docs = {};
       const search = lunr(function() {
         this.field('title', { boost: 10 });
@@ -118,11 +121,11 @@ async function content() {
         }))
       };
 
-      // Precompile browser templates
+      // Precompile browser templates.
       const bin = './node_modules/.bin/nunjucks-precompile';
       const src = './layout/templates/posts.html';
-      const out = './public/assets/templates/posts.js';
-      sh.execAsync(`${bin} ${src} --name posts.html >> ${out}`, { silent: true }, done);
+      const out = './docs/assets/templates/posts.js';
+      sh.exec(`${bin} ${src} --name posts.html >> ${out}`, { silent: true }, done);
     })
 
     .use(layouts({

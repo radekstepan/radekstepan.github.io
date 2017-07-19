@@ -48,14 +48,16 @@
       </div>
     </div>
 
-    <div id="search" style="opacity:0">
-      <div class="wrapper">
-        <div class="close"></div>
-        <p>Use the field below to search the site &hellip;</p>
-        <div class="input">
-          <input type="text" placeholder="Enter keyword...">
+    {% if posts.length %}
+      <div id="search" style="opacity:0">
+        <div class="wrapper">
+          <div class="close"></div>
+          <p>Use the field below to search the site &hellip;</p>
+          <div class="input">
+            <input type="text" placeholder="Enter keyword...">
+          </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   </body>
 </html>
