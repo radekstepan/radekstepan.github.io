@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+      <title>Radek Stepan | Front-End Engineer</title>
+    
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script type="text/javascript">
+$(function() {
+  window.fn = {};
+
+  // Captions for post images.
+  fn.captions = function() {
+    $('#post .body p img')
+    .parent()
+    .contents()
+    .filter(function() {
+      return this.nodeType == 3; // Node.TEXT_NODE
+    })
+    .replaceWith(function() {
+      return $('<div/>', {
+        'class': 'caption',
+        'text': $.trim(this.data)
+      });
+    });
+  };
+
+  // Time ago.
+  (fn.ago = function() {
+    $('.date').text(function(i, val) {
+      return moment(val).fromNow();
+    });
+  })();
+
+  // Search.
+  var el = $('#search'),
+      visible = false;
+
+  el.find('.close').on('click', function() {
+    el.removeClass('visible');
+    visible = false;
+  });
+
+  window.onkeypress = function(evt) {
+    var input = evt.target.tagName.match(/input/i);
+    switch(evt.which) {
+      // Q.
+      case 113:
+        if (!input) {
+          el.toggleClass('visible');
+          visible = !visible;
+          if (visible) {
+            setTimeout(function() {
+              el.find('input').focus();
+            }, 250);
+          }
+        }
+        break;
+      // Enter.
+      case 13:
+        if (input) {
+          var q = encodeURIComponent(
+            evt.target.value
+            .replace(/ +/g, '-')
+            .toLowerCase()
+          );
+          if (q.length) {
+            window.location.href = '/search.html?q=' + q;
+          }
+        }
+        break;
+    }
+  };
+});
+</script>
+
+    <link rel="stylesheet" href="/assets/style.css"/>
+  </head>
+  <body>
+    <div id="body">
+      <header id="header">
+        <div class="wrapper">
+          <a id="home" href="/">Radek Stepan</a>
+          <ul id="links">
+            <li><a href="https://github.com/radekstepan" class="icon-github" target="_blank">GitHub</a></li>
+            <li><a href="http://www.behance.net/radekstepan" class="icon-behance" target="_blank">Behance</a></li>
+            <li><a href="http://radekstepan.com/resume" class="icon-file-pdf" target="_blank">CV</a></li>
+            <li><a href="https://ca.linkedin.com/pub/radek-stepan/11/a54/66a" class="icon-linkedin" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main id="content" class="wrapper">
+        
+  <div id="hero">
+    <h1 id="a-front-end-engineer-with-a-specialization-in-react-js-flux-architecture-">A Front-End Engineer with a specialization in React.js &amp; Flux architecture.</h1>
+<p>I&#39;d call my combination of conceptual and user interface skills <em>plug &amp; play</em>. You get code that developers can easily plug into and products that end users can actually play with.</p>
+<p>In the past I&#39;ve helped teams build an e-commerce site, home buyers find their ideal neighbourhood, scientists visualize their data sets or setup a custom PaaS on a machine aptly called &quot;the ukraine&quot;...</p>
+<p>Being pragmatic about both the end user experience and the programmer codebase <em>experience</em>, I usually work closely with the product owner, the design team and dev team lead on the system at hand. A place that I&#39;d be proud to be a part of? Any environment with decisive visionaries where creativity &amp; autonomy is encouraged.</p>
+<p>Radek</p>
+
+  </div>
+
+  
+
+      </main>
+
+      <footer id="footer">
+        <div class="wrapper">
+          <h4>Contact Radek</h4>
+          <p>Not currently open for work opportunities. You can connect with me via LinkedIn or GitHub;
+            the latter reveals my email address.</p>
+        </div>
+      </footer>
+
+      <div id="copy">
+        <div class="wrapper">
+          &copy; 2017 Radek Stepan. All rights reserved.
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
