@@ -43,6 +43,9 @@ async function content() {
     .source('./content')
     .destination('./docs')
     .clean(false)
+    .metadata({
+      currentYear: new Date().getFullYear()
+    })
 
     .use(debug())
 
