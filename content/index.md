@@ -1,7 +1,7 @@
 ---
 layout: index.html
 ---
-# A Senior Front-End Engineer with a specialization in JavaScript (React, AngularJS, Node.js).
+# A Senior Front-End Developer with a specialization in JavaScript (React, AngularJS, Node.js).
 
 I'd call my combination of conceptual and user interface skills *plug & play*. You get code that developers can easily plug into and products that end users can actually play with.
 
