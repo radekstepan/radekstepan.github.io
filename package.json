@@ -30,5 +30,8 @@
     "build": "DEBUG=metalsmith:* node build.js",
     "start": "./node_modules/.bin/superstatic docs --port 8090",
     "publish": "git subtree push --prefix=docs origin master"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.11"
   }
 }
